@@ -1,0 +1,15 @@
+{
+    "name": "joshu/adegaflow",
+    "autoload": {
+        "psr-4": {
+            "Joshu\\Adegaflow\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Joshua B.",
+            "email": "joshuabatista@live.com"
+        }
+    ],
+    "require": {}
+}
