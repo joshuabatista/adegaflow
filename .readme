@@ -1,2 +1,2 @@
 //tailwind
-$ npx @tailwindcss/cli -i ./public_html/assets/css/input.css -o ./tailwind/output.css --watch
+npx @tailwindcss/cli -i ./public_html/assets/css/input.css -o ./tailwind/output.css --watch
