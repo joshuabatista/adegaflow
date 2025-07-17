@@ -1,0 +1,6 @@
+RewriteEngine On
+
+
+
+RewriteRule ^home$ /src/modules/public/frontend/public-home-page.php [L]
+
