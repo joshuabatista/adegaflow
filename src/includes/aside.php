@@ -1,4 +1,4 @@
-<aside class="w-64 bg-[#2b2d3e] text-white flex flex-col  p-4">
+<aside class="w-64 bg-[#2b2d3e] text-white flex flex-col p-4">
     <div class="lex items-center gap-1 justify-center">
         <img src="/public_html/assets/images/AF_Just_Logo.svg" class="w-48 ml-3" alt="Logo">
     </div>
