@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.label {
+    @apply block uppercase tracking-wide text-amber-50 text-xs font-bold mb-2;
+}
+
+.form-input {
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none focus:shadow-outline;
+}
