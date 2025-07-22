@@ -1,5 +1,5 @@
 <?php
-    $title = "AdegaFlow | Inicio";
+    $title = "AdegaFlow | Vendas";
     require_once dirname(__DIR__, 4) . '/public_html/config/bootstrap.php';
 ?>
 
@@ -13,21 +13,21 @@
                 <div class="grid grid-cols-6 p-3 mt-7 gap-2.5">
                     <div class="">
                         <label class="label" for="grid-first-name">De</label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none focus:shadow-outline" id="de" type="date" placeholder="01/01/2025">
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="de" type="date" placeholder="01/01/2025">
                     </div>
 
                     <div class="">
                         <label class="label" for="grid-first-name">
                             Até
                         </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none focus:shadow-outline" id="de" type="date" placeholder="01/01/2025">
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="de" type="date" placeholder="01/01/2025">
                     </div>
 
                     <div class="">
                         <label class="label" for="grid-first-name">
                             Produto
                         </label>
-                        <select name="produto" id="produto" class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none focus:shadow-outline">
+                        <select name="produto" id="produto" class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none">
                             <option value="">Selecione</option>
                         </select>
                     </div>
@@ -36,7 +36,7 @@
                         <label class="label" for="grid-first-name">
                             Plano de Contas
                         </label>
-                        <select name="plano_contas" id="plano_contas" class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none focus:shadow-outline">
+                        <select name="plano_contas" id="plano_contas" class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none">
                             <option value="">Selecione</option>
                         </select>
                     </div>
@@ -45,19 +45,19 @@
                         <label class="label" for="grid-first-name">
                             Quantidade
                         </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none focus:shadow-outline" id="quantidade" type="number" placeholder="Quantidade">
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="quantidade" type="number" placeholder="Quantidade">
                     </div>
 
                     <div class="">
                         <label class="label" for="grid-first-name">
                             Valor
                         </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none focus:shadow-outline" id="valor" type="text" placeholder="Valor">
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="valor" type="text" placeholder="Valor">
                     </div>
                 </div>
                 <div class="flex justify-start p-3 gap-2.5">
                     <button class=" w-3.5 text-amber-50">
-                        <i class="fa-solid fa-file-excel fa-2x"></i>
+                        <i class="fa-regular fa-file-excel fa-2x"></i>
                     </button>
                 </div>
                 <div class="grid grid-cols-1 p-3 mt-2.5 justify-center">
