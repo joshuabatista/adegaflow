@@ -11,7 +11,7 @@
       <a href="sales" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-dollar-sign"></i> Vendas</a>
       <a href="stock" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-wine-bottle"></i> Estoque</a>
       <a href="#" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-chart-simple"></i> Relatórios</a>
-      <a href="#" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-shop"></i> Perfil</a>
+      <a href="profile" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-shop"></i> Perfil</a>
       <a href="#" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-person-running"></i> Sair</a>
     </nav>
   </aside>

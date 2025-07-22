@@ -5,5 +5,7 @@ RewriteEngine On
 RewriteRule ^home$ /src/modules/public/frontend/public-home-page.php [L]
 RewriteRule ^sales$ /src/modules/public/frontend/public-sales.php [L]
 RewriteRule ^stock$ /src/modules/public/frontend/public-stock.php [L]
+RewriteRule ^profile$ /src/modules/public/frontend/public-profile.php [L]
+
 
 
