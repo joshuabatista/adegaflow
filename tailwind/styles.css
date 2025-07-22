@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-green-900: oklch(39.3% 0.095 152.535);
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-rose-400: oklch(71.2% 0.194 13.428);
@@ -196,6 +197,9 @@
   }
   .col-span-4 {
     grid-column: span 4 / span 4;
+  }
+  .mx-auto {
+    margin-inline: auto;
   }
   .me-2 {
     margin-inline-end: calc(var(--spacing) * 2);
@@ -569,6 +573,31 @@
   cursor: pointer;
   border-radius: var(--radius-lg);
   background-color: #343e59;
+  padding-inline: calc(var(--spacing) * 5);
+  padding-block: calc(var(--spacing) * 2.5);
+  text-align: center;
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-amber-50);
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+  &:hover {
+    @media (hover: hover) {
+      --tw-scale-x: 105%;
+      --tw-scale-y: 105%;
+      --tw-scale-z: 105%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+}
+.btn-success {
+  margin-inline-end: calc(var(--spacing) * 2);
+  margin-bottom: calc(var(--spacing) * 2);
+  cursor: pointer;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-green-900);
   padding-inline: calc(var(--spacing) * 5);
   padding-block: calc(var(--spacing) * 2.5);
   text-align: center;
