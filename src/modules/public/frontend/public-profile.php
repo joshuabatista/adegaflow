@@ -56,7 +56,6 @@
                                 </div>
                                 <div class="flex justify-center mt-4">
                                     <button type="button" class="font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-[#343e59] text-amber-50 hover:scale-105 duration-300 text-center cursor-pointer">Salvar informações</button>
-
                                 </div>
                             </div>
                         </div>

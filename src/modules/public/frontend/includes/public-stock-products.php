@@ -2,7 +2,7 @@
     <div class="grid grid-cols-6 p-3 mt-7 gap-2.5">
         <div class="">
             <label class="label" for="grid-first-name">Produto</label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="produto" type="date" placeholder="Caixa de cerveja">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="produto" type="text" placeholder="Caixa de cerveja">
         </div>
 
         <div class="">
