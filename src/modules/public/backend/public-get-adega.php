@@ -1,13 +1,15 @@
 <?php
 require __DIR__ . '../../../../../public_html/config/bootstrap-backend.php';
 
-$pdo->beginTransection();
+$pdo->beginTransaction();
 
-$sql = "SELECT * FROM adega WHERE adega_id = ?";
+$sql = "SELECT bairro, cep, cidade, cnpj, email, logradouro, nome, numero, telefone
+        FROM adega 
+        WHERE adega_id = ?";
 
 $query = prepareAll($sql, [$adega_id]);
 
-if(!empty(query->exception)){
+if(!empty($query->exception)){
     $pdo->rollback();
     response([
         'status'=>false,
@@ -19,7 +21,7 @@ $data = $query->data;
 
 $data = $data[0];
 
-$email = decryptData($data->email);
+$email = decryptData($data->email, $key);
 
 $pdo->commit();
 

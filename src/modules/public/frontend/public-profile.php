@@ -17,7 +17,7 @@
                                 <div class="grid grid-cols-2 gap-2">
                                     <div class="flex flex-col">
                                         <label class="label">CNPJ</label>
-                                        <input type="text" class="form-input" name="cnpj" id="cnpj" placeholder="00.00.000.000-00">
+                                        <input type="text" class="form-input" name="cnpj" id="cnpj" readonly placeholder="00.00.000.000-00">
                                     </div>
                                     <div class="flex flex-col">
                                         <label class="label">Nome</label>
@@ -27,17 +27,17 @@
                                 <div class="grid grid-cols-3 mt-4 gap-2">
                                     <div class="flex flex-col col-span-1">
                                         <label class="label">CEP</label>
-                                        <input type="text" class="form-input" name="cep" id="cep" placeholder="000000-00">
+                                        <input type="text" class="form-input" name="cep" id="cep" readonly placeholder="000000-00">
                                     </div>
                                     <div class="flex flex-col col-span-2">
                                         <label class="label">Logradouro</label>
-                                        <input type="text" class="form-input" name="logradouro" id="logradouro" placeholder="Rua dos Milagres">
+                                        <input type="text" class="form-input" name="logradouro" id="logradouro" readonly placeholder="Rua dos Milagres">
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-2 mt-4 gap-2">
                                     <div class="flex flex-col col-span-1">
                                         <label class="label">Bairro</label>
-                                        <input type="text" class="form-input" name="bairro" id="bairro" placeholder="Jardim Imperial">
+                                        <input type="text" class="form-input" name="bairro" id="bairro" readonly placeholder="Jardim Imperial">
                                     </div>
                                     <div class="flex flex-col col-span-1">
                                         <label class="label">Telefone</label>
@@ -47,11 +47,11 @@
                                 <div class="grid grid-cols-2 mt-4 gap-2">
                                     <div class="flex flex-col col-span-1">
                                         <label class="label">Cidade</label>
-                                        <input type="text" class="form-input" name="cidade" id="cidade" placeholder="São Paulo">
+                                        <input type="text" class="form-input" name="cidade" id="cidade" readonly placeholder="São Paulo">
                                     </div>
                                     <div class="flex flex-col col-span-1">
                                         <label class="label">E-mail</label>
-                                        <input type="text" class="form-input" name="email" id="email" placeholder="adega@gmail.com">
+                                        <input type="text" class="form-input" name="email" id="email" readonly placeholder="adega@gmail.com">
                                     </div>
                                 </div>
                                 <div class="flex justify-center mt-4">
@@ -63,5 +63,6 @@
                 </div>
            </div>
         </main>
+        <script src="src/modules/public/frontend/assets/js/public-profile.js"></script>
     </body>
 </html>
