@@ -7,12 +7,16 @@ const login = (event) => {
 
     let email = $('#email').val()
     let senha = $('#senha').val()
+    const spinner = $('.loading-logar')
+    spinner.removeClass('hidden')
 
     if(!email || !senha){
         showLottieToast({
             message: "Preencha os campos corretamente",
             type: "error",
             duration: 3500
+        }).then(()=>{
+            spinner.addClass('hidden')
         })
         return
     }
@@ -52,8 +56,8 @@ const login = (event) => {
                 })
             }
         }
-
-        
+    }).aways(()=>{
+        spinner.addClass('hidden')
     })
 
 

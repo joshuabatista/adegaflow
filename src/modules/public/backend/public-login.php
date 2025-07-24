@@ -49,7 +49,7 @@ foreach($info as $k => $value){
         // Preenche os dados do usuário
         $adega->id = $value->adega_id;
         $adega->email = $decryptEmail; // Ou use $email se quiser o valor original
-        $adega->nome = decryptData($value->nome, $key);
+        $adega->nome = $value->nome;
         $adega->senha = $value->senha;
         $adega->cnpj = $value->cnpj;
         $adega->cep = $value->cep;
@@ -78,10 +78,6 @@ if(!password_verify($password, $adega->senha)){
         'message'=>'Senha inválida!'
     ]);
 }
-
-// echo '<pre>';
-// die(var_dump($adega));
-// echo '</pre>';
 
 $_SESSION['adega_id'] = $adega->id;
 $_SESSION['adega_nome'] = $adega->nome;
