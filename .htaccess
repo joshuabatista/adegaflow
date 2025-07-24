@@ -11,3 +11,4 @@ RewriteRule ^login$ /src/modules/public/frontend/public-login.php [L]
 
 
 RewriteRule ^login-adega$ /src/modules/public/backend/public-login.php [L]
+RewriteRule ^logout$ /src/modules/public/backend/public-logout.php [L]

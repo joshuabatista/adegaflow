@@ -1,11 +1,8 @@
 <?php
-// session_start();
-
-// // Se o usuário já estiver na página de login, não redireciona.
-// if (!isset($_SESSION['user_id']) && $_SERVER['REQUEST_URI'] !== '/login') {
-//     header("Location: /login");
-//     exit;
-// }
+if (!isset($_SESSION['adega_id']) && $_SERVER['REQUEST_URI'] !== '/login') {
+    header("Location: /login");
+    exit;
+}
 ?>
 
 <head>

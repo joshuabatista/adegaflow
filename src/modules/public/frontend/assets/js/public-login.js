@@ -56,7 +56,7 @@ const login = (event) => {
                 })
             }
         }
-    }).aways(()=>{
+    }).always(() => {
         spinner.addClass('hidden')
     })
 
