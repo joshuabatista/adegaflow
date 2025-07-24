@@ -57,8 +57,6 @@
   }
 </style>
 
-
-
 <html>
     <body class="flex bg-[#343e59]">
         <main class="flex-1 p-3">
