@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require 'conection.php';
     require '../../../../src/includes/head.php';
     require '../../../../app/functions.php';

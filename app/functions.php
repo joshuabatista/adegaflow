@@ -2,6 +2,8 @@
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 
+$key = 'rootZada@@Pcsp';
+
 class Route 
 {
 
@@ -188,41 +190,41 @@ function response($arr = [], $code = 200, $sleep = 0, $type = 'json', $headers =
     exit;
 }
 
-function dd() {
-    return die(dump(func_get_args()));
+// function dd() {
+//     return die(dump(func_get_args()));
+// }
+
+
+function encryptData($data, $key) {
+    $cipher = "AES-256-CBC";
+    $iv = random_bytes(openssl_cipher_iv_length($cipher));
+    $encrypted = openssl_encrypt($data, $cipher, $key, 0, $iv);
+    return base64_encode($encrypted . '::' . $iv);
 }
 
-
-// function encryptData($data, $key) {
-//     $cipher = "AES-256-CBC";
-//     $iv = random_bytes(openssl_cipher_iv_length($cipher));
-//     $encrypted = openssl_encrypt($data, $cipher, $key, 0, $iv);
-//     return base64_encode($encrypted . '::' . $iv);
-// }
-
-// function decryptData($encryptedEmail, $key) {
+function decryptData($encryptedEmail, $key) {
     
-//     $cipher = "AES-256-CBC";
+    $cipher = "AES-256-CBC";
   
-//     // Verifica se a string contém o separador '::'
-//     if (strpos(base64_decode($encryptedEmail), '::') === false) {
-//         return false; // Se não tiver '::', os dados estão corrompidos
-//     }
+    // Verifica se a string contém o separador '::'
+    if (strpos(base64_decode($encryptedEmail), '::') === false) {
+        return false; // Se não tiver '::', os dados estão corrompidos
+    }
     
-//     list($encryptedData, $iv) = explode('::', base64_decode($encryptedEmail), 2); // Separa os dados criptografados do IV
+    list($encryptedData, $iv) = explode('::', base64_decode($encryptedEmail), 2); // Separa os dados criptografados do IV
 
-//     // Verifica se ambos os componentes estão presentes
-//     if (!isset($encryptedData, $iv)) {
-//         return false;
-//     }
+    // Verifica se ambos os componentes estão presentes
+    if (!isset($encryptedData, $iv)) {
+        return false;
+    }
 
-//     // Verifica o comprimento do IV
-//     $ivLength = openssl_cipher_iv_length($cipher);
-//     if (strlen($iv) !== $ivLength) {
-//         return false; // Se o IV não tiver o tamanho correto
-//     }
+    // Verifica o comprimento do IV
+    $ivLength = openssl_cipher_iv_length($cipher);
+    if (strlen($iv) !== $ivLength) {
+        return false; // Se o IV não tiver o tamanho correto
+    }
 
 
-//     // Descriptografa o email
-//     return openssl_decrypt($encryptedData, $cipher, $key, 0, $iv);
-// }
+    // Descriptografa o email
+    return openssl_decrypt($encryptedData, $cipher, $key, 0, $iv);
+}
