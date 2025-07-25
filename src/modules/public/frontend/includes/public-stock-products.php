@@ -23,7 +23,7 @@
             <label class="label" for="grid-first-name">
                 Plano de Contas
             </label>
-            <select name="plano_contas" id="plano_contas" class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none">
+            <select name="plano_contas" id="plano_contas_filtro" class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none">
                 <option value="">Selecione</option>
             </select>
         </div>

@@ -16,10 +16,9 @@
         <label class="label">Produto</label>
         <input type="text" class="form-input" name="produto" id="produto" placeholder="Caixa de cerveja">
     </div>
-     <div class="grid grid-cols-1 mt-4 gap-2">
+    <div class="grid grid-cols-1 mt-4 gap-2">
         <label class="label">Plano de Contas</label>
         <select name="plano_contas" id="plano_contas" class="form-input">
-            <option value="">Selecione</option>
         </select>
     </div>
     <div class="grid grid-cols-2 mt-4 gap-2">

@@ -19,5 +19,6 @@
            </div>
         </main>
         <?php require_once __DIR__ . '../../../../includes/footer.php'?>
+        <script src="src/modules/public/frontend/assets/js/public-stock.js"></script>
     </body>
 </html>
