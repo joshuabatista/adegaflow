@@ -2,21 +2,21 @@
     <div class="grid grid-cols-6 p-3 mt-7 gap-2.5">
         <div class="">
             <label class="label" for="grid-first-name">Produto</label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="produto" type="text" placeholder="Caixa de cerveja">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="produto_filtro" type="text" placeholder="Caixa de cerveja">
         </div>
 
         <div class="">
             <label class="label" for="grid-first-name">
                 Data de entrada
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="data_entrada" type="date" placeholder="01/01/2025">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="data_entrada_filtro" type="date" placeholder="01/01/2025">
         </div>
 
         <div class="">
             <label class="label" for="grid-first-name">
                 Quantidade
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="quantidade" type="number" placeholder="Quantidade">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="quantidade_filtro" type="number" placeholder="Quantidade">
         </div>
 
         <div class="">
@@ -32,7 +32,7 @@
             <label class="label" for="grid-first-name">
                 Valor de Compra
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="valor_compra" type="text" placeholder="R$ 35,00">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="valor_compra_filtro" type="text" placeholder="R$ 35,00">
         </div>
 
         
@@ -40,7 +40,7 @@
             <label class="label" for="grid-first-name">
                 Valor de Venda
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="valor_venda" type="text" placeholder="R$ 70,00">
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-[#343e59] leading-tight focus:outline-none" id="valor_venda_filtro" type="text" placeholder="R$ 70,00">
         </div>
     </div>
     <div class="flex justify-start p-3 gap-2.5">
