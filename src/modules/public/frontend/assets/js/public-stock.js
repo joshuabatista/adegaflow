@@ -1,47 +1,52 @@
 $(() => {
     getPlano()
+    getProdutos()
     $('#valor_compra').maskMoney({prefix:'R$ ', allowNegative: true, thousands:'.', decimal:',', affixesStay: true})
     $('#valor_venda').maskMoney({prefix:'R$ ', allowNegative: true, thousands:'.', decimal:',', affixesStay: true})
     hoje()
 })
+
+var currentPage, totalPages
+
 
 const getPlano = async () => {
     const url = 'get-plano'
 
     const response = await $.ajax(url)
 
-    renderPlano(response)
+    renderPlano(response, ['#plano_contas', '#plano_contas_filtro'])
 
 }
 
-const renderPlano = (response) => {
-    
-    const select = $('#plano_contas')
+const renderPlano = (response, selects) => {
+    selects.forEach(selector => {
+        const select = $(selector);
 
-    select.empty().append('<option value=""></option>')
-    
-    response.data.forEach(grupo => {
-        const optgroup = $('<optgroup>', { label: grupo.label });
-        grupo.options.forEach(opcao => {
-        optgroup.append(
-            $('<option>', { value: opcao.value, text: opcao.text })
-        );
+        select.empty().append('<option value=""></option>');
+
+        response.data.forEach(grupo => {
+            const optgroup = $('<optgroup>', { label: grupo.label });
+            grupo.options.forEach(opcao => {
+                optgroup.append(
+                    $('<option>', { value: opcao.value, text: opcao.text })
+                );
+            });
+            select.append(optgroup);
         });
-        select.append(optgroup)
+
+        if (select.hasClass("select2-hidden-accessible")) {
+            select.select2('destroy');
+        }
+
+        select.select2({
+            placeholder: 'Selecione um plano de contas',
+            allowClear: true,
+            width: '100%',
+            minimumResultsForSearch: 0,
+            dropdownParent: select.parent()
+        });
     });
-
-    if (select.hasClass("select2-hidden-accessible")) {
-        select.select2('destroy')
-    }
-
-    $('#plano_contas').select2({
-        placeholder: 'Selecione um plano de contas',
-        allowClear: true,
-        width: '100%',
-        minimumResultsForSearch: 0,
-        dropdownParent: $('#plano_contas').parent()
-    })
-}
+};
 
 const addProduct = () => {
     $('.btn-add-product').prop('disabled', true)
@@ -114,6 +119,95 @@ const addProduct = () => {
 
 }
 
+const getProdutos = async (page = 1) => {
+
+    $('.loading').removeClass('hidden')
+
+    const url = 'get-products'
+
+    data = {
+        produto: $('#produto_filtro').val(),
+        data_entrada_de: $('#data_entrada_de').val(),
+        data_entrada_ate: $('#data_entrada_ate').val(),
+        plano_contas: $('#plano_contas_filtro').val(),
+        page: page
+    }
+
+    if (isNaN(page)) page = 1;
+
+    const response = await $.ajax(url, {data})
+
+    renderProdutos(response)
+}
+
+const renderProdutos = (response) => {
+    
+    const container = $('.container-products')
+
+    container.empty()
+
+    currentPage = Number(response.page);
+    totalPages = Number(response.pages);
+
+    $('.pagination-info-card').html(`Página <strong>${currentPage}</strong> de ${totalPages}`);
+
+    $('.loading').addClass('hidden')
+
+    response.data.forEach(elm => {
+
+        container.append(`
+                <div class="grid grid-cols-12 gap-2 p-3 bg-[#2b2d3e] text-white text-sm items-center hover:bg-[#3b3d4e] transition">
+                    <div class="col-span-1">${elm.data_entrada}</div>
+                    <div class="col-span-3 truncate">${elm.produto}</div>
+                    <div class="col-span-3 truncate">${elm.plano_contas}</div>
+                    <div class="col-span-1 text-start">${elm.quantidade}</div>
+                    <div class="col-span-1 text-start">R$ ${parseFloat(elm.valor_compra).toFixed(2)}</div>
+                    <div class="col-span-1 text-start">R$ ${parseFloat(elm.valor_venda).toFixed(2)}</div>
+                    <div class="col-span-1 text-center">
+                        <button class="text-red-500 hover:text-red-400">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                    <div class="col-span-1 text-center">
+                        <button class="text-blue-400 hover:text-blue-300">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                    </div>
+                </div>
+            `)
+    })
+
+    $('.pagination-card').removeClass('hidden');
+
+    $('.btn-next-card').prop('disabled', currentPage + 1 > totalPages);
+    $('.btn-prev-card').prop('disabled', currentPage - 1 <= 0);
+
+}
+
+const nextCard = () => {
+
+    const container = $('.container-products')
+
+    container.empty()
+
+    const page = Number(currentPage) + 1
+
+    getProdutos(page)
+}
+
+const prevCard = () => {
+
+    const container = $('.container-products')
+
+    container.empty()
+
+    const page = Number(currentPage) - 1
+
+    getProdutos(page)
+}
+
+
+
 
 
 //funcoes auxiliares
@@ -139,3 +233,20 @@ const stripMoney = value => {
 
 //eventos
 $(document).on('click', '.btn-add-product', addProduct)
+
+let debounceTimer;
+$(document).on('input', '#produto_filtro', function () {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => {
+    getProdutos(1);   
+  }, 300);
+});
+$(document).on('change', '#data_entrada_de, #data_entrada_ate, #plano_contas_filtro', () => {
+  getProdutos(1);
+});
+$('.btn-prev-card').on('click', () => {
+  if (currentPage > 1) getProdutos(currentPage - 1);
+});
+$('.btn-next-card').on('click', () => {
+  if (currentPage < totalPages) getProdutos(currentPage + 1);
+});
