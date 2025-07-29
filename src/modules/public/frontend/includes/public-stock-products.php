@@ -1,5 +1,5 @@
 <div class=" pr-4">
-    <div class="grid grid-cols-6 p-3 mt-7 gap-2.5">
+    <div class="grid grid-cols-6 p-3 mt-2 gap-2.5">
         <div class="col-span-2">
             <label class="label" for="grid-first-name">Produto</label>
             <input class="form-input" id="produto_filtro" type="text" placeholder="Caixa de cerveja">
@@ -27,12 +27,12 @@
             </select>
         </div>
     </div>
-    <div class="flex justify-start p-3 gap-2.5">
+    <div class="flex justify-start pl-3">
         <button class=" w-3.5 text-amber-50">
             <i class="fa-regular fa-file-excel fa-2x"></i>
         </button>
     </div>
-    <div class="grid grid-cols-12 gap-2 border-b p-3 mt-4 bg-[#2b2d3e] rounded-t-xl text-sm font-semibold text-white">
+    <div class="grid grid-cols-12 gap-2 border-b p-3 mt-4 bg-[#2b2d3e] rounded-t-xl text-sm font-semibold text-white shadow-2xl">
         <div class="col-span-1">Entrada</div>
         <div class="col-span-3">Produto</div>
         <div class="col-span-3">Plano de Contas</div>
@@ -42,7 +42,7 @@
         <div class="col-span-1 text-center">Excluir</div>
         <div class="col-span-1 text-center">Editar</div>
     </div>
-    <div class="container-products">
+    <div class="container-products shadow-2xl">
        
     </div>
 
@@ -64,7 +64,7 @@
         <div class="flex gap-4 mt-4">
             <!-- Botão Anterior -->
             <button
-                class="btn-prev-card bg-[#2b2d3e] inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-gradient-to-r from-[#2b2d3e] to-[#2b2d3e] text-white text-sm font-medium hover:opacity-90 transition-all duration-200 shadow-md">
+                class="btn-prev-card cursor-pointer bg-[#2b2d3e] inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-gradient-to-r from-[#2b2d3e] to-[#2b2d3e] text-white text-sm font-medium hover:opacity-90 transition-all duration-200 shadow-md">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
@@ -74,7 +74,7 @@
 
             <!-- Botão Próximo -->
             <button
-                class="btn-next-card bg-[#2b2d3e] inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-gradient-to-r from-[#313344] to-[#333547] text-white text-sm font-medium hover:opacity-90 transition-all duration-200 shadow-md">
+                class="btn-next-card cursor-pointer bg-[#2b2d3e] inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-gradient-to-r from-[#313344] to-[#333547] text-white text-sm font-medium hover:opacity-90 transition-all duration-200 shadow-md">
                 Próximo
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">

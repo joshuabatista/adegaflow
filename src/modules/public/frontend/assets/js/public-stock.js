@@ -101,6 +101,7 @@ const addProduct = () => {
                     $('#valor_compra').val('')
                     $('#valor_venda').val('')
                     $('.btn-add-product').prop('disabled', false)
+                    getProdutos()
                 })
             } else {
                 showLottieToast({
@@ -120,6 +121,10 @@ const addProduct = () => {
 }
 
 const getProdutos = async (page = 1) => {
+
+    const container = $('.container-products')
+
+    container.empty()
 
     $('.loading').removeClass('hidden')
 
@@ -143,8 +148,6 @@ const getProdutos = async (page = 1) => {
 const renderProdutos = (response) => {
     
     const container = $('.container-products')
-
-    container.empty()
 
     currentPage = Number(response.page);
     totalPages = Number(response.pages);
@@ -176,6 +179,9 @@ const renderProdutos = (response) => {
                 </div>
             `)
     })
+    const allCards = container.children('.grid');
+    allCards.removeClass('rounded-b-xl'); // limpa se houver
+    allCards.last().addClass('rounded-b-xl');
 
     $('.pagination-card').removeClass('hidden');
 
