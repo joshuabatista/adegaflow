@@ -22,5 +22,3 @@
         </div>
     </div>
 </div>
-
-<script src="src/modules/public/frontend/assets/js/public-home-info.js"></script>

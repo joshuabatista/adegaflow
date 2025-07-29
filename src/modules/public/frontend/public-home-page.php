@@ -16,5 +16,7 @@
             </div>
         </main>
         <?php require_once __DIR__ . '../../../../includes/footer.php'?>
+        <script src="src/modules/public/frontend/assets/js/public-home-info.js"></script>
+        <script src="src/modules/public/frontend/assets/js/public-home-new-sale.js"></script>
     </body>
 </html>

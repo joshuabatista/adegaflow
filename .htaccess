@@ -17,3 +17,4 @@ RewriteRule ^profile-edit$ /src/modules/public/backend/public-profile-edit.php [
 RewriteRule ^get-plano$ /src/modules/public/backend/public-get-plano-contas.php [L]
 RewriteRule ^add-product$ /src/modules/public/backend/public-add-product.php [L]
 RewriteRule ^get-products$ /src/modules/public/backend/public-get-products.php [L]
+RewriteRule ^get-products-sale$ /src/modules/public/backend/public-get-products-sale.php [L]

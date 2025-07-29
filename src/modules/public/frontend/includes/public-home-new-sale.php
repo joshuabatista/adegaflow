@@ -11,7 +11,6 @@
         <div class="col-span-1">
             <label class="label">Produto</label>
             <select name="produto" id="produto" class="form-input">
-                <option value="">Selecione</option>
             </select>
         </div>
     </div>
