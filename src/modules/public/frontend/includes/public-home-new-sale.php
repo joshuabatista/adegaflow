@@ -17,9 +17,7 @@
     <div class="grid grid-cols-1 mt-4 gap-2">
         <div class="col-span-1">
             <label class="label">Plano de Contas</label>
-            <select name="plano_contas" id="plano_contas" class="form-input" disabled>
-                <option value="">Selecione</option>
-            </select>
+            <input type="text" name="plano_contas" id="plano_contas" class="form-input" readonly>
         </div>
     </div>
     <div class="grid grid-cols-2 mt-4 gap-2">

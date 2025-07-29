@@ -18,3 +18,4 @@ RewriteRule ^get-plano$ /src/modules/public/backend/public-get-plano-contas.php 
 RewriteRule ^add-product$ /src/modules/public/backend/public-add-product.php [L]
 RewriteRule ^get-products$ /src/modules/public/backend/public-get-products.php [L]
 RewriteRule ^get-products-sale$ /src/modules/public/backend/public-get-products-sale.php [L]
+RewriteRule ^get-plano-sale$ /src/modules/public/backend/public-get-plano-contas-sale.php [L]
