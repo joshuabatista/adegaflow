@@ -244,9 +244,6 @@
   .col-span-6 {
     grid-column: span 6 / span 6;
   }
-  .col-span-8 {
-    grid-column: span 8 / span 8;
-  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -292,6 +289,9 @@
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
+  .mt-auto {
+    margin-top: auto;
+  }
   .mr-60 {
     margin-right: calc(var(--spacing) * 60);
   }
@@ -328,6 +328,9 @@
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
+  .h-\[600px\] {
+    height: 600px;
+  }
   .max-h-\[505px\] {
     max-height: 505px;
   }
@@ -357,12 +360,6 @@
   }
   .w-96 {
     width: calc(var(--spacing) * 96);
-  }
-  .w-\[90\%\] {
-    width: 90%;
-  }
-  .w-\[95\%\] {
-    width: 95%;
   }
   .w-full {
     width: 100%;
@@ -459,6 +456,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  .overflow-auto {
+    overflow: auto;
   }
   .overflow-x-auto {
     overflow-x: auto;
@@ -729,13 +729,6 @@
   .even\:bg-gray-50 {
     &:nth-child(even) {
       background-color: var(--color-gray-50);
-    }
-  }
-  .hover\:bg-\[\#2e2f3c\] {
-    &:hover {
-      @media (hover: hover) {
-        background-color: #2e2f3c;
-      }
     }
   }
   .hover\:bg-\[\#3b3d4e\] {
