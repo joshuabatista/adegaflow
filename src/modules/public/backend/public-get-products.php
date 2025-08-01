@@ -32,6 +32,7 @@ $sql = "SELECT SQL_CALC_FOUND_ROWS p.produto_id, p.produto, pc.descricao plano_c
         FROM produtos p
         LEFT JOIN plano_contas_analitico pc ON pc.codigo = p.plano_contas
         WHERE p.adega_id = ?
+        AND p.quantidade > 0
         $and
         LIMIT $start, $limit";
 

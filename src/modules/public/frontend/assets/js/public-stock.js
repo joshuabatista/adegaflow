@@ -156,6 +156,16 @@ const renderProdutos = (response) => {
 
     $('.loading').addClass('hidden')
 
+    if (response.data.length === 0) {
+        container.append(`
+            <div class="flex flex-col justify-center items-center py-8">
+                <span class="text-white text-sm">Nenhum produto encontrado!</span>
+            </div>
+        `);
+
+        return;
+    }
+
     response.data.forEach(elm => {
 
         container.append(`
