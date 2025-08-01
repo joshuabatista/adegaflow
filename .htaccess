@@ -20,3 +20,5 @@ RewriteRule ^get-products$ /src/modules/public/backend/public-get-products.php [
 RewriteRule ^get-products-sale$ /src/modules/public/backend/public-get-products-sale.php [L]
 RewriteRule ^get-plano-sale$ /src/modules/public/backend/public-get-plano-contas-sale.php [L]
 RewriteRule ^new-sale$ /src/modules/public/backend/public-new-sale.php [L]
+RewriteRule ^validate-product$ /src/modules/public/backend/public-validate-product.php [L]
+RewriteRule ^add-qtd-sale$ /src/modules/public/backend/public-add-qtd-sale.php [L]

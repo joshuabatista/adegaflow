@@ -197,6 +197,7 @@ const vender = () => {
                         atualizarCarrinho()
                         spinner.addClass('hidden')
                         $('.btn-vender').prop('disabled', false)
+                        getProducts()
                     })
             } else {
                 showLottieToast({
@@ -214,7 +215,94 @@ const vender = () => {
 
 }
 
+const validateProduct = () => {
 
+    let produto = $('#produto').val()
+    let qtd = $('#qtd').val()
+    let valor_venda = stripMoney($('#valor').val())
+
+    if(!produto || !qtd || !valor_venda){
+        return
+    }
+    
+    url = 'validate-product'
+
+    data = {produto: produto, qtd: qtd, valor_venda: valor_venda}
+
+    $.ajax({
+        url: url,
+        method: 'GET', 
+        data: data,
+        dataType: 'json',
+    }).done(function(response) {
+        if (!response.status && response.erro === '0902') {
+            const atual     = parseInt(response.estoque, 10);
+            const diferenca = qtd - atual;
+            showLottieModal({
+                title: 'Estoque Insuficiente',
+                type: 'warning',
+                html: `
+                Você está tentando vender <b>${qtd}</b> unidades,<br>
+                mas só há <b>${atual}</b> no estoque.<br><br>
+                Deseja adicionar <b>${diferenca}</b> unidade(s) ao estoque
+                para concluir a venda?<br>
+                <small>(Use a aba de Estoque para lançamentos mais precisos.)</small>
+                `,
+                confirmText: 'Adicionar',
+                cancelText: 'Cancelar'
+            }).then(userConfirmed => {
+                if (userConfirmed) {
+                    $.ajax({
+                        url: 'add-qtd-sale',
+                        method: 'POST',
+                        data: { produto, qtd: diferenca },
+                        dataType: 'json'
+                    }).done(resp2 => {
+                        if (resp2.status) {
+                        showLottieToast({
+                            message: resp2.message,
+                            type: 'success',
+                            duration: 3000
+                        }).then(() => {
+                            getProducts()
+                        });
+                        } else {
+                        showLottieToast({
+                            message: resp2.message,
+                            type: 'error',
+                            duration: 3500
+                        });
+                        }
+                    })
+                } else {    
+                    carrinho = []   
+                    atualizarCarrinho()                 
+                }
+            });
+            return
+        } else {
+          if(!response.status && response.erro === '0903'){
+            showLottieToast({
+                message: response.message,
+                type: 'error',
+                duration: 4000
+            }).then(()=>{
+                carrinho = []
+                atualizarCarrinho()
+            })
+          }
+        }
+    })
+}
+
+
+
+
+
+
+
+
+//funções auxiliares
 const hoje = () => {
     const hoje = new Date()
     const ano = hoje.getFullYear()
@@ -226,8 +314,20 @@ const hoje = () => {
 }
 const formatarMoeda = (valor) => {
     return 'R$ ' + parseFloat(valor).toFixed(2).replace('.', ',')
-};
+}
 
+const stripMoney = value => {
+    if(value == 0) {
+        return value = 0 
+    }
+        
+    value = Number(value.replace(/[^0-9\-]+/g, '').replace(/(\..*)\./g, '$1')) / 100;
+
+    return value
+}
+
+//eventos ouvintes
 $(document).on('change', '#produto', getPlanoContas)
+$(document).on('click', '.btn-add-carrinho', validateProduct)
 $(document).on('click', '.btn-add-carrinho', addProduct)
 $(document).on('click', '.btn-vender', vender)

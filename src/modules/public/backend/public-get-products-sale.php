@@ -3,7 +3,8 @@ require __DIR__ . '../../../../../public_html/config/bootstrap-backend.php';
 
 $sql = "SELECT produto_id, quantidade, produto
         FROM produtos
-        WHERE adega_id = ?";
+        WHERE adega_id = ?
+        AND quantidade > 0";
 
 $query = prepareAll($sql, [$adega_id]);
 
