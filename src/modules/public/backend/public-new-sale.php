@@ -25,8 +25,8 @@ if(empty($data_venda)){
 }
 
 $sql = "INSERT INTO vendas 
-        (venda_id, adega_id, produto_id, qtd, valor_total) 
-        VALUES (?, ?, ?, ?, ?)";
+        (venda_id, adega_id, produto_id, qtd, valor_total, data_venda) 
+        VALUES (?, ?, ?, ?, ?, ?)";
 
 foreach ($carrinho as $produto) {
     $columns = [
@@ -34,7 +34,8 @@ foreach ($carrinho as $produto) {
         $adega_id,
         $produto['id'],
         $produto['quantidade'],
-        floatval($produto['valor'])
+        floatval($produto['valor']),
+        $data_venda
     ];
 
     $query = prepare($sql, $columns); 
