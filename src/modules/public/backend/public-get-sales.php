@@ -32,12 +32,13 @@ if(!empty($venda_id)){
     $and .= " AND venda_id LIKE '%$venda_id%'";
 }
 
-$sql = "SELECT SQL_CALC_FOUND_ROWS v.venda_id, v.qtd qtd_venda, v.valor_total, v.data_venda, p.produto, pc.descricao 
+$sql = "SELECT SQL_CALC_FOUND_ROWS v.venda_id, v.qtd qtd_venda, v.valor_total, v.data_venda, p.produto, pc.descricao, DATE_FORMAT(v.data_venda, '%d/%m/%Y') data_venda_formatada
         FROM vendas v
         LEFT JOIN produtos p ON p.produto_id = v.produto_id
         LEFT JOIN plano_contas_analitico pc ON pc.codigo = p.plano_contas
         WHERE v.adega_id = ?
         $and
+        ORDER BY v.created_at desc
         LIMIT $start, $limit";
 
 $query = prepareAll($sql, [$adega_id]);

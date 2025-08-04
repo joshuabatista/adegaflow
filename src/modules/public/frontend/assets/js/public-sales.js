@@ -1,5 +1,6 @@
 $(()=>{
     getSales()
+    getPlano()
 })
 
 var currentPage, totalPages
@@ -55,7 +56,7 @@ const renderSales = (response) => {
         container.append(`
                 <div class="grid grid-cols-12 gap-2 p-3 bg-[#2b2d3e] text-white text-sm items-center hover:bg-[#3b3d4e] transition">
                     <div class="col-span-2">${elm.venda_id}</div>
-                    <div class="col-span-1 truncate">${elm.data_venda}</div>
+                    <div class="col-span-1 truncate">${elm.data_venda_formatada}</div>
                     <div class="col-span-4 truncate">${elm.produto}</div>
                     <div class="col-span-1 text-start">${elm.qtd_venda}</div>
                     <div class="col-span-2 text-start">R$ ${parseFloat(elm.valor_total).toFixed(2)}</div>
@@ -104,6 +105,47 @@ const prevCard = () => {
     getSales(page)
 }
 
+
+const getPlano = async () => {
+    const url = 'get-plano'
+
+    const response = await $.ajax(url)
+
+    renderPlano(response, ['#plano_contas'])
+
+}
+
+const renderPlano = (response, selects) => {
+    selects.forEach(selector => {
+        const select = $(selector);
+
+        select.empty().append('<option value=""></option>');
+
+        response.data.forEach(grupo => {
+            const optgroup = $('<optgroup>', { label: grupo.label });
+            grupo.options.forEach(opcao => {
+                optgroup.append(
+                    $('<option>', { value: opcao.value, text: opcao.text })
+                );
+            });
+            select.append(optgroup);
+        });
+
+        if (select.hasClass("select2-hidden-accessible")) {
+            select.select2('destroy');
+        }
+
+        select.select2({
+            placeholder: 'Selecione um plano de contas',
+            allowClear: true,
+            width: '100%',
+            minimumResultsForSearch: 0,
+            dropdownParent: select.parent()
+        });
+    });
+};
+
+
 let debounceTimer
 
 $(document).on('input', '#produto, #venda_id', function () {
@@ -112,7 +154,7 @@ $(document).on('input', '#produto, #venda_id', function () {
     getSales(1)   
   }, 300)
 })
-$(document).on('change', '#de, #ate, #produto, #plano_contas_filtro',  () => {
+$(document).on('change', '#de, #ate, #produto, #plano_contas',  () => {
   getSales(1)
 })
 $('.btn-prev-card').on('click', () => {

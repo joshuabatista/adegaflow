@@ -8,7 +8,7 @@ $plano_contas = $_GET['plano_contas'] ?? null;
 
 $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
 
-$limit = 7;
+$limit = 12;
 
 $start = max(0, ($page - 1) * $limit);
 
