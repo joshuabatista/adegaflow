@@ -1,164 +1,216 @@
-var sparklineData = [47, 45, 54, 38, 56, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46];
+// 1) Declare chart1/2/3 _antes_ de usar
+let chart1, chart2, chart3;
 
-var randomizeArray = function (arg) {
-  var array = arg.slice();
-  var currentIndex = array.length, temporaryValue, randomIndex;
+$(() => {
+  // 2) Agora sim você pode chamar
+  getReceitaCusto();
+});
 
-  while (0 !== currentIndex) {
+async function getReceitaCusto() {
+  const url = 'revenue-cost';
+  const response = await $.ajax(url);
 
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
+  // 3) Se já existirem instâncias, destrua antes
+  if (chart1) chart1.destroy();
+  if (chart2) chart2.destroy();
+  if (chart3) chart3.destroy();
 
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-  }
+  // ——— reste do código: monta labels, arrays e formatadores ———
+  const today  = new Date();
+  const year   = today.getFullYear();
+  const month  = String(today.getMonth()+1).padStart(2,'0');
+  const brDay  = d => String(d).padStart(2,'0');
 
-  return array;
-}
+  const custosArr   = Object.values(response.custos);
+  const receitasArr = Object.values(response.receitas);
+  const lucroArr    = Object.values(response.lucros);
 
-var spark1 = {
-  chart: {
-      id: 'sparkline1',
-      group: 'sparklines',
-      type: 'area',
-      height: 160,
-      sparkline: {
-        enabled: true
+  const daysInMonth = custosArr.length;
+  const labels = Array.from({ length: daysInMonth }, (_, i) =>
+    `${brDay(i+1)}/${month}/${year}`
+  );
+
+  const fmtBRL = v =>
+    new Intl.NumberFormat('pt-BR',{ style:'currency',currency:'BRL'}).format(v);
+
+  const totalCustos   = custosArr.reduce((a,b)=>a+b,0);
+  const totalReceitas = receitasArr.reduce((a,b)=>a+b,0);
+  const totalLucro    = lucroArr.reduce((a,b)=>a+b,0);
+
+  // ——— opções comuns ———
+  const baseOpts = {
+    chart:      { group:'sparklines', type:'area', height:160, sparkline:{enabled:true} },
+    stroke:     { curve:'straight' },
+    fill:       { opacity:1 },
+    labels:     labels,
+    xaxis:      { type:'category' },
+    yaxis:      { min:0 },
+    title:      { offsetX:30, style:{fontSize:'24px',color:'#fff'} },
+    subtitle:   { offsetX:30, style:{fontSize:'14px',color:'#fff'} },
+    tooltip:    { enabled:true, shared:true, intersect:false, followCursor:false,
+                  y:{formatter:val=>fmtBRL(val)} }
+  };
+
+  // ——— chart1 ———
+  
+  chart1 = new ApexCharts(
+    document.querySelector("#spark1"),
+    {
+      chart: {
+        id: 'spark1',
+        group: 'sparklines',
+        type: 'area',
+        height: 160,
+        sparkline: { enabled: true },
       },
-  },
-  stroke: {
-    curve: 'straight'
-  },
-  fill: {
-    opacity: 1,
-  },
-  series: [{
-    name: 'Receita',
-    data: randomizeArray(sparklineData)
-  }],
-  labels: [...Array(24).keys()].map(n => `2018-09-0${n+1}`),
-  yaxis: {
-      min: 0
-  },
-  xaxis: {
-      type: 'datetime',
-  },
-  colors: ['#DCE6EC'],
-  title: {
-      text: '$424,652',
-      offsetX: 30,
-      style: {
-      fontSize: '24px',
-      color: '#ffffff'
-      }
-  },
-  subtitle: {
-      text: 'Receita',
-      offsetX: 30,
-      style: {
-      fontSize: '14px',
-      color: '#ffffff'
-      }
-  }
+      stroke: { curve: 'straight' },
+      fill:   { opacity: 1 },
+      labels: labels,
+      xaxis:  { type: 'category' },
+      yaxis:  { min: 0 },
+      tooltip: {
+        enabled: true,
+        shared: true,
+        intersect: false,
+        followCursor: false,
+        y: {
+          formatter: val => fmtBRL(val)
+        },
+        x: {
+          formatter: val => {
+            return `${brDay(val)}/${month}/${year}`;
+          }
+        }
+      },
+      series: [{ name: 'Custos', data: custosArr }],
+      title: {
+        text: fmtBRL(totalCustos),
+        offsetX: 30,
+        style: { fontSize: '24px', color: '#ffffff' }
+      },
+      subtitle: {
+        text: 'Custos',
+        offsetX: 30,
+        style: { fontSize: '14px', color: '#ffffff' }
+      },
+      colors: ['#feb019'],
+    }
+  );
+
+  chart2 = new ApexCharts(
+    document.querySelector("#spark2"),
+    {
+      chart: {
+        id: 'spark2',
+        group: 'sparklines',
+        type: 'area',
+        height: 160,
+        sparkline: { enabled: true },
+      },
+      stroke: { curve: 'straight' },
+      fill:   { opacity: 1 },
+      labels: labels,
+      xaxis:  { type: 'category' },
+      yaxis:  { min: 0 },
+      tooltip: {
+        enabled: true,
+        shared: true,
+        intersect: false,
+        followCursor: false,
+        y: {
+          formatter: val => fmtBRL(val)
+        },
+        x: {
+          formatter: val => {
+            return `${brDay(val)}/${month}/${year}`;
+          }
+        }
+      },
+      series: [{ name: 'Receita', data: receitasArr }],
+      title: {
+        text: fmtBRL(totalReceitas),
+        offsetX: 30,
+        style: { fontSize: '24px', color: '#ffffff' }
+      },
+      subtitle: {
+        text: 'Receita',
+        offsetX: 30,
+        style: { fontSize: '14px', color: '#ffffff' }
+      },
+      colors: ['#008ffb'],
+    }
+  )
+
+
+  chart3 = new ApexCharts(
+    document.querySelector("#spark3"),
+    {
+      chart: {
+        id: 'spark3',
+        group: 'sparklines',
+        type: 'area',
+        height: 160,
+        sparkline: { enabled: true },
+      },
+      stroke: { curve: 'straight' },
+      fill:   { opacity: 1 },
+      labels: labels,
+      xaxis:  { type: 'category' },
+      yaxis:  { min: 0 },
+      tooltip: {
+        enabled: true,
+        shared: true,
+        intersect: false,
+        followCursor: false,
+        y: {
+          formatter: val => fmtBRL(val)
+        },
+        x: {
+          formatter: val => {
+            return `${brDay(val)}/${month}/${year}`;
+          }
+        }
+      },
+      series: [{ name: 'Lucro', data: lucroArr }],
+      title: {
+        text: fmtBRL(totalLucro),
+        offsetX: 30,
+        style: { fontSize: '24px', color: '#ffffff' }
+      },
+      subtitle: {
+        text: 'Lucro',
+        offsetX: 30,
+        style: { fontSize: '14px', color: '#ffffff' }
+      },
+      colors: ['#00e396'],
+    }
+  );
+
+
+  // ——— Render ———
+  chart1.render();
+  chart2.render();
+  chart3.render();
 }
 
-var spark2 = {
-  chart: {
-    id: 'sparkline2',
-    group: 'sparklines',
-    type: 'area',
-    height: 160,
-    sparkline: {
-      enabled: true
-    },
-  },
-  stroke: {
-    curve: 'straight'
-  },
-  fill: {
-    opacity: 1,
-  },
-  series: [{
-    name: 'Custos',
-    data: randomizeArray(sparklineData)
-  }],
-  labels: [...Array(24).keys()].map(n => `2018-09-0${n+1}`),
-  yaxis: {
-    min: 0
-  },
-  xaxis: {
-    type: 'datetime',
-  },
-  colors: ['#DCE6EC'],
-  title: {
-    text: '$235,312',
-    offsetX: 30,
-    style: {
-      fontSize: '24px',
-      color: '#ffffff'
-    }
-  },
-  subtitle: {
-    text: 'Custos',
-    offsetX: 30,
-    style: {
-      fontSize: '14px',
-      color: '#ffffff'
-    }
-  }
-}
 
-var spark3 = {
-  chart: {
-    id: 'sparkline3',
-    group: 'sparklines',
-    type: 'area',
-    height: 160,
-    sparkline: {
-      enabled: true
-    },
-  },
-  stroke: {
-    curve: 'straight'
-  },
-  fill: {
-    opacity: 1,
-  },
-  series: [{
-    name: 'Lucro',
-    data: randomizeArray(sparklineData)
-  }],
-  labels: [...Array(24).keys()].map(n => `2018-09-0${n+1}`),
-  xaxis: {
-    type: 'datetime',
-  },
-  yaxis: {
-    min: 0
-  },
-  colors: ['#008FFB'],
-  //colors: ['#5564BE'],
-  title: {
-    text: '$135,965',
-    offsetX: 30,
-    style: {
-      fontSize: '24px',
-      color: '#ffffff'
-    }
-  },
-  subtitle: {
-    text: 'Lucro',
-    offsetX: 30,
-    style: {
-      fontSize: '14px',
-      color: '#ffffff'
-    }
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var options = {
     series: [{
-    name: 'Receita',
+    name: 'Receitaaaa',
     data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 44, 56, 76]
   }, {
     name: 'Custo',
@@ -226,6 +278,3 @@ var options = {
 
 var chart = new ApexCharts(document.querySelector("#chart"), options)
 chart.render();
-new ApexCharts(document.querySelector("#spark1"), spark1).render();
-new ApexCharts(document.querySelector("#spark2"), spark2).render();
-new ApexCharts(document.querySelector("#spark3"), spark3).render();

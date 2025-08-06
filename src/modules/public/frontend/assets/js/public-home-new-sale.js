@@ -198,6 +198,7 @@ const vender = () => {
                         spinner.addClass('hidden')
                         $('.btn-vender').prop('disabled', false)
                         getProducts()
+                        getReceitaCusto()
                     })
             } else {
                 showLottieToast({
