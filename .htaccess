@@ -24,3 +24,4 @@ RewriteRule ^validate-product$ /src/modules/public/backend/public-validate-produ
 RewriteRule ^add-qtd-sale$ /src/modules/public/backend/public-add-qtd-sale.php [L]
 RewriteRule ^get-sales$ /src/modules/public/backend/public-get-sales.php [L]
 RewriteRule ^revenue-cost$ /src/modules/public/backend/public-home-revenue-cost.php [L]
+RewriteRule ^revenue-cost-year$ /src/modules/public/backend/public-home-revenue-cost-year.php [L]

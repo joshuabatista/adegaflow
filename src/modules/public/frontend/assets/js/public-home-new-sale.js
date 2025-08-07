@@ -199,6 +199,7 @@ const vender = () => {
                         $('.btn-vender').prop('disabled', false)
                         getProducts()
                         getReceitaCusto()
+                        getReceitaCustoMes()
                     })
             } else {
                 showLottieToast({
