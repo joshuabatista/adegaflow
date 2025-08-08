@@ -630,6 +630,9 @@
   .text-red-500 {
     color: var(--color-red-500);
   }
+  .text-rose-400 {
+    color: var(--color-rose-400);
+  }
   .text-white {
     color: var(--color-white);
   }

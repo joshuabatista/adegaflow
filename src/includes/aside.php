@@ -1,3 +1,8 @@
+<?php
+$url = $_SERVER['REQUEST_URI'];
+?>
+
+
 <aside class="w-64 bg-[#2b2d3e] text-white flex flex-col p-4">
     <div class="lex items-center gap-1 justify-center">
         <img src="/public_html/assets/images/AF_Just_Logo.svg" class="w-48 ml-3" alt="Logo">
@@ -7,11 +12,11 @@
         <h1 class="text-2xl font-bold text-[#197679]">Flow</h1>
     </div>
     <nav class="flex flex-col gap-4 justify-center items-center">
-      <a href="home" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-house"></i> Inicio</a>
-      <a href="sales" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-dollar-sign"></i> Vendas</a>
-      <a href="stock" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-wine-bottle"></i> Estoque</a>
+      <a href="home" class="<?=$url === '/home' ? 'text-rose-400' : '' ?> hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-house"></i> Inicio</a>
+      <a href="sales" class="<?=$url === '/sales' ? 'text-rose-400' : '' ?> hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-dollar-sign"></i> Vendas</a>
+      <a href="stock" class="<?=$url === '/stock' ? 'text-rose-400' : '' ?> hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-wine-bottle"></i> Estoque</a>
       <a href="#" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-chart-simple"></i> Relatórios</a>
-      <a href="profile" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-shop"></i> Perfil</a>
+      <a href="profile" class="<?=$url === '/profile' ? 'text-rose-400' : '' ?> hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-shop"></i> Perfil</a>
       <a href="logout" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-person-running"></i> Sair</a>
     </nav>
   </aside>
