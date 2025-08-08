@@ -243,6 +243,22 @@ const stripMoney = value => {
     return value
 }
 
+$('#btn-exportar-excel').on('click', function () {
+    const produto = $('#produto_filtro').val()
+    const dataEntradaDe = $('#data_entrada_de').val()
+    const dataEntradaAte = $('#data_entrada_ate').val()
+    const planoContas = $('#plano_contas_filtro').val()
+
+    const params = new URLSearchParams({
+        produto: produto,
+        data_entrada_de: dataEntradaDe,
+        data_entrada_ate: dataEntradaAte,
+        plano_contas: planoContas
+    })
+
+    window.open(`get-products-excel?${params.toString()}`, '_blank')
+})
+
 //eventos
 $(document).on('click', '.btn-add-product', addProduct)
 

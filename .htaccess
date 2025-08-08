@@ -25,3 +25,5 @@ RewriteRule ^add-qtd-sale$ /src/modules/public/backend/public-add-qtd-sale.php [
 RewriteRule ^get-sales$ /src/modules/public/backend/public-get-sales.php [L]
 RewriteRule ^revenue-cost$ /src/modules/public/backend/public-home-revenue-cost.php [L]
 RewriteRule ^revenue-cost-year$ /src/modules/public/backend/public-home-revenue-cost-year.php [L]
+RewriteRule ^get-products-excel$ /src/modules/public/backend/public-get-products-excel.php [L]
+RewriteRule ^get-sales-excel$ /src/modules/public/backend/public-get-sales-excel.php [L]

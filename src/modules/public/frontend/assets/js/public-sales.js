@@ -145,6 +145,24 @@ const renderPlano = (response, selects) => {
     });
 };
 
+$('#btn-sales-excel').on('click', function () {
+    const produto = $('#produto').val()
+    const dataEntradaDe = $('#de').val()
+    const dataEntradaAte = $('#ate').val()
+    const planoContas = $('#plano_contas').val()
+    const venda_id = $('#venda_id').val()
+
+    const params = new URLSearchParams({
+        produto: produto,
+        data_entrada_de: dataEntradaDe,
+        data_entrada_ate: dataEntradaAte,
+        plano_contas: planoContas,
+        venda_id: venda_id
+    })
+
+    window.open(`get-sales-excel?${params.toString()}`, '_blank')
+})
+
 
 let debounceTimer
 

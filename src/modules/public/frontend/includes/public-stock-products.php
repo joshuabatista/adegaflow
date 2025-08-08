@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="flex justify-start pl-3">
-        <button class=" w-3.5 text-amber-50">
+        <button class="w-3.5 text-amber-50 cursor-pointer" id="btn-exportar-excel">
             <i class="fa-regular fa-file-excel fa-2x"></i>
         </button>
     </div>

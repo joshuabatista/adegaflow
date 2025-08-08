@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="flex justify-start p-3 gap-2.5">
-                    <button class=" w-3.5 text-amber-50">
+                    <button class=" w-3.5 text-amber-50 cursor-pointer" id="btn-sales-excel">
                         <i class="fa-regular fa-file-excel fa-2x"></i>
                     </button>
                 </div>
