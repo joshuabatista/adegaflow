@@ -1,4 +1,4 @@
-<div class="bg-[#2b2d3e] p-4 rounded-2xl shadow-2xl max-h-[505px]">
+<div class="bg-[#2b2d3e] p-4 rounded shadow-2xl max-h-[505px]">
     <div class="flex justify-center">
         <span class="text-2xl text-amber-50 font-semibold text-center">Novo Produto</span>
     </div>

@@ -52,7 +52,7 @@
                         <i class="fa-regular fa-file-excel fa-2x"></i>
                     </button>
                 </div>
-                <div class="grid grid-cols-12 gap-2 border-b p-3 mt-4 bg-[#2b2d3e] rounded-t-xl text-sm font-semibold text-white shadow-2xl">
+                <div class="grid grid-cols-12 gap-2 border-b p-3 mt-4 bg-[#2b2d3e] rounded text-sm font-semibold text-white shadow-2xl">
                     <div class="col-span-2">Venda ID</div>
                     <div class="col-span-1">Data</div>
                     <div class="col-span-4">Produto</div>

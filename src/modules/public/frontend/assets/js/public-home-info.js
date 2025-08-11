@@ -1,8 +1,10 @@
 let chart1, chart2, chart3, chartAno;
 
 $(() => {
+  setKpiDateInputs()
   getReceitaCusto()
   getReceitaCustoMes()
+  getKpi()
 });
 
 async function getReceitaCusto() {
@@ -145,6 +147,113 @@ const renderChartsAno = (response) => {
   chartAno.render()
 }
 
+const getKpi = async () => {
+
+  let de = $('#kpi_de').val()
+  let ate = $('#kpi_ate').val()
+
+  let data = {
+    de: de,
+    ate: ate
+  }
+  
+  const url = 'get-kpi'
+
+  const response = await $.ajax(url, {data})
+
+  renderKpi(response)
+  
+}
+
+const renderKpi = (response) => {
+  animateCount('#vendas', 0, parseCurrency(response.vendas), 1000, {
+    decimals: 0,
+    prefix: '',
+    suffix: ''
+  })
+
+  animateCount('#ticket', 0, parseCurrency(response.ticket_medio), 1000, {
+    decimals: 2,
+    prefix: 'R$ ',
+    suffix: ''
+  })
+
+  animateCount('#margem', 0, parseCurrency(response.margem_media), 1000, {
+    decimals: 2,
+    prefix: '',
+    suffix: '%'
+  })
+
+  animateCount('#crescimento', 0, parseCurrency(response.crescimento), 1000, {
+    decimals: 2,
+    prefix: '',
+    suffix: '%'
+  })
+}
+
+function month() {
+  const hoje = new Date()
+  const ano = hoje.getFullYear()
+  const mes = hoje.getMonth() // 0-based
+
+  const primeiroDia = new Date(ano, mes, 1)
+  const ultimoDia = new Date(ano, mes + 1, 0)
+
+  const formatDate = (date) => {
+    const anoF = date.getFullYear()
+    const mesF = String(date.getMonth() + 1).padStart(2, '0')
+    const diaF = String(date.getDate()).padStart(2, '0')
+    return `${anoF}-${mesF}-${diaF}`
+  }
+
+  return {
+    primeiroDia: formatDate(primeiroDia),
+    ultimoDia: formatDate(ultimoDia)
+  }
+}
+
+const setKpiDateInputs = () => {
+  const { primeiroDia, ultimoDia } = month()
+  $('#kpi_de').val(primeiroDia)
+  $('#kpi_ate').val(ultimoDia)
+}
+
+
+const animateCount = (selector, start, end, duration, options = {}) => {
+  let { decimals = 2, prefix = '', suffix = '' } = options
+  let current = start
+  const range = end - start
+  const stepTime = 10
+  const steps = Math.ceil(duration / stepTime)
+  const increment = range / steps
+  let stepCount = 0
+
+  const interval = setInterval(() => {
+    stepCount++
+    current += increment
+
+    if (stepCount >= steps) {
+      clearInterval(interval)
+      current = end
+    }
+
+    const formatted = current.toLocaleString('pt-BR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals })
+
+    $(selector).html(prefix + formatted + suffix)
+  }, stepTime)
+}
+
+const parseCurrency = (value) => {
+  if (typeof value === 'number') return value
+  if (typeof value === 'string') {
+    const normalized = value.replace(/[^\d,.-]/g, '').replace(/\./g, '').replace(',', '.')
+    const parsed = parseFloat(normalized)
+    return isNaN(parsed) ? 0 : parsed
+  }
+  return 0
+}
+
+$(document).on('change', '#kpi_de, #kpi_ate', getKpi)
 
 
 

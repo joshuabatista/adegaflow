@@ -200,6 +200,7 @@ const vender = () => {
                         getProducts()
                         getReceitaCusto()
                         getReceitaCustoMes()
+                        getKpi()
                     })
             } else {
                 showLottieToast({

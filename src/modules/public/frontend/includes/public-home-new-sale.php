@@ -1,4 +1,4 @@
-<div class="bg-[#2b2d3e] p-4 rounded shadow-2xl flex flex-col h-[600px]">
+<div class="bg-[#2b2d3e] p-4 rounded shadow-2xl flex flex-col h-[575px] mt-5">
 
     <div class="grid grid-cols-3 gap-2 mt-2">
         <div class="col-span-2">

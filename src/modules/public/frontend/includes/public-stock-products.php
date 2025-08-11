@@ -32,7 +32,7 @@
             <i class="fa-regular fa-file-excel fa-2x"></i>
         </button>
     </div>
-    <div class="grid grid-cols-12 gap-2 border-b p-3 mt-4 bg-[#2b2d3e] rounded-t-xl text-sm font-semibold text-white shadow-2xl">
+    <div class="grid grid-cols-12 gap-2 border-b p-3 mt-4 bg-[#2b2d3e] rounded-t text-sm font-semibold text-white shadow-2xl">
         <div class="col-span-1">Entrada</div>
         <div class="col-span-3">Produto</div>
         <div class="col-span-3">Plano de Contas</div>

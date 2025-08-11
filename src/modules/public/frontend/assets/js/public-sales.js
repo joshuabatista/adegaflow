@@ -74,8 +74,8 @@ const renderSales = (response) => {
             `)
     })
     const allCards = container.children('.grid')
-    allCards.removeClass('rounded-b-xl')
-    allCards.last().addClass('rounded-b-xl')
+    allCards.removeClass('rounded')
+    allCards.last().addClass('rounded')
 
     $('.pagination-card').removeClass('hidden')
 

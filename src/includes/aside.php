@@ -15,7 +15,7 @@ $url = $_SERVER['REQUEST_URI'];
       <a href="home" class="<?=$url === '/home' ? 'text-rose-400' : '' ?> hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-house"></i> Inicio</a>
       <a href="sales" class="<?=$url === '/sales' ? 'text-rose-400' : '' ?> hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-dollar-sign"></i> Vendas</a>
       <a href="stock" class="<?=$url === '/stock' ? 'text-rose-400' : '' ?> hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-wine-bottle"></i> Estoque</a>
-      <a href="#" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-chart-simple"></i> Relatórios</a>
+      <!-- <a href="#" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-chart-simple"></i> Relatórios</a> -->
       <a href="profile" class="<?=$url === '/profile' ? 'text-rose-400' : '' ?> hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-shop"></i> Perfil</a>
       <a href="logout" class="hover:text-rose-400 text-2xl cursor-pointer"><i class="fa-solid fa-person-running"></i> Sair</a>
     </nav>
