@@ -28,3 +28,4 @@ RewriteRule ^revenue-cost-year$ /src/modules/public/backend/public-home-revenue-
 RewriteRule ^get-products-excel$ /src/modules/public/backend/public-get-products-excel.php [L]
 RewriteRule ^get-sales-excel$ /src/modules/public/backend/public-get-sales-excel.php [L]
 RewriteRule ^get-kpi$ /src/modules/public/backend/public-get-kpi.php [L]
+RewriteRule ^send-email$ /src/modules/public/backend/public-send-email.php [L]
