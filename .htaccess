@@ -7,6 +7,7 @@ RewriteRule ^sales$ /src/modules/public/frontend/public-sales.php [L]
 RewriteRule ^stock$ /src/modules/public/frontend/public-stock.php [L]
 RewriteRule ^profile$ /src/modules/public/frontend/public-profile.php [L]
 RewriteRule ^login$ /src/modules/public/frontend/public-login.php [L]
+RewriteRule ^new-password$ /src/modules/public/frontend/public-new-password.php [L]
 
 
 
@@ -29,3 +30,6 @@ RewriteRule ^get-products-excel$ /src/modules/public/backend/public-get-products
 RewriteRule ^get-sales-excel$ /src/modules/public/backend/public-get-sales-excel.php [L]
 RewriteRule ^get-kpi$ /src/modules/public/backend/public-get-kpi.php [L]
 RewriteRule ^send-email$ /src/modules/public/backend/public-send-email.php [L]
+RewriteRule ^forget-password$ /src/modules/public/backend/public-forget-password.php [L]
+RewriteRule ^validation-code$ /src/modules/public/backend/public-validation-code.php [L]
+RewriteRule ^set-new-password$ /src/modules/public/backend/public-set-new-password.php [L]
