@@ -6,9 +6,12 @@
 <html>
     <body class="flex bg-[#343e59]">
         <?php require_once dirname(__DIR__, 4) . '/src/includes/aside.php'?>
-        <main class="flex-1 p-3">
-            <h2 class="text-3xl font-semibold text-amber-50">Bem-vindo, <?= $adega_nome ?></h2>
-            <div class="grid grid-cols-[70%_30%] pl-3 pr-3 pt-3">
+        <main class="flex-1 p-0 md:p-5">
+             <div class="flex flex-col justify-center">
+                <h2 class="block md:hidden text-center text-2xl p-5 font-semibold bg-[#2b2d3e] rounded-b-3xl text-amber-50 ">Bem-vindo, <?= $adega_nome ?></h2>
+            </div>
+            <h2 class="hidden md:block text-3xl font-semibold text-amber-50">Bem-vindo, <?= $adega_nome ?></h2>
+            <div class="sm:flex md:grid grid-cols-[70%_30%] p-2">
                 <?php
                     require_once __DIR__ . '/includes/public-home-info.php';
                     require_once __DIR__ . '/includes/public-home-new-sale.php';

@@ -1,8 +1,11 @@
 let chart1, chart2, chart3, chartAno;
+let chart1_mobile, chart2_mobile, chart3_mobile
+let mobileData = null;
 
 $(() => {
   setKpiDateInputs()
   getReceitaCusto()
+  getReceitaCustoMobile()
   getReceitaCustoMes()
   getKpi()
 });
@@ -71,6 +74,108 @@ async function getReceitaCusto() {
   chart2.render()
   chart3.render()
 }
+
+async function getReceitaCustoMobile() {
+  const url = 'revenue-cost';
+  const response = await $.ajax(url);
+
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const brDay = d => String(d).padStart(2, '0');
+
+  const custosArr = Object.values(response.custos || {}).map(v => parseFloat(v) || 0);
+  const receitasArr = Object.values(response.receitas || {}).map(v => parseFloat(v) || 0);
+  const lucroArr = Object.values(response.lucros || {}).map(v => parseFloat(v) || 0);
+
+  const daysInMonth = Math.max(custosArr.length, receitasArr.length, lucroArr.length);
+  const labels = Array.from({ length: daysInMonth }, (_, i) => `${brDay(i + 1)}/${month}/${year}`);
+
+  const totalCustos = custosArr.reduce((a,b)=>a+b,0);
+  const totalReceitas = receitasArr.reduce((a,b)=>a+b,0);
+  const totalLucro = lucroArr.reduce((a,b)=>a+b,0);
+
+  const globalMin = Math.min(0, ...custosArr, ...receitasArr, ...lucroArr);
+  const globalMax = Math.max(...custosArr, ...receitasArr, ...lucroArr);
+
+  mobileData = {
+    custos: { arr: custosArr, total: totalCustos, labels },
+    receitas: { arr: receitasArr, total: totalReceitas, labels },
+    lucro: { arr: lucroArr, total: totalLucro, labels },
+    globalMin,
+    globalMax
+  };
+
+  // Renderiza a tab inicial (Custos)
+  renderMobileChart('custo');
+}
+
+// Cria opções do chart
+function buildMobileOpts(title, total, color, dataArr, labels, globalMin, globalMax) {
+  const fmtBRL = v => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(v);
+  return {
+    chart: { type: 'area', height: 160, sparkline: { enabled: true } },
+    stroke: { curve: 'straight' },
+    fill: { opacity: 1 },
+    labels,
+    xaxis: { type: 'category' },
+    yaxis: { min: globalMin, max: globalMax },
+    tooltip: { y: { formatter: val => fmtBRL(val) } },
+    series: [{ name: title, data: dataArr }],
+    title: { text: fmtBRL(total), style: { fontSize: '18px', color: '#ffffff' } },
+    subtitle: { text: title, style: { fontSize: '12px', color: '#ffffff' } },
+    colors: [color]
+  };
+}
+
+function renderMobileChart(key) {
+  if (!mobileData) return;
+
+  let chartRef, elId, opts;
+  if (key === 'custo') {
+    elId = 'spark1_mobile';
+    chartRef = chart1_mobile;
+    opts = buildMobileOpts('Custos', mobileData.custos.total, '#feb019', mobileData.custos.arr, mobileData.custos.labels, mobileData.globalMin, mobileData.globalMax);
+  } else if (key === 'receita') {
+    elId = 'spark2_mobile';
+    chartRef = chart2_mobile;
+    opts = buildMobileOpts('Receitas', mobileData.receitas.total, '#008ffb', mobileData.receitas.arr, mobileData.receitas.labels, mobileData.globalMin, mobileData.globalMax);
+  } else if (key === 'lucro') {
+    elId = 'spark3_mobile';
+    chartRef = chart3_mobile;
+    opts = buildMobileOpts('Lucro', mobileData.lucro.total, '#00e396', mobileData.lucro.arr, mobileData.lucro.labels, mobileData.globalMin, mobileData.globalMax);
+  }
+
+  if (!chartRef) {
+    const el = document.querySelector('#'+elId);
+    if (el) {
+      const chart = new ApexCharts(el, opts);
+      chart.render();
+      if (key === 'custo') chart1_mobile = chart;
+      if (key === 'receita') chart2_mobile = chart;
+      if (key === 'lucro') chart3_mobile = chart;
+    }
+  }
+}
+
+$('#sparkTabs .tab-link').on('click', function(e){
+  e.preventDefault();
+  const target = $(this).attr('href');
+
+  $('.tab-panel').addClass('hidden');
+  $(target).removeClass('hidden');
+
+  $('#sparkTabs .tab-link').removeClass('active');
+  $(this).addClass('active');
+
+  const keyMap = {
+    '#tab-custo': 'custo',
+    '#tab-receita': 'receita',
+    '#tab-lucro': 'lucro'
+  };
+  renderMobileChart(keyMap[target]);
+});
+
 
 const getReceitaCustoMes = async () => {
   const url = 'revenue-cost-year'
