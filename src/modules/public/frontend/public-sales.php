@@ -6,10 +6,13 @@
 <html>
     <body class="flex bg-[#343e59]">
         <?php require_once dirname(__DIR__, 4) . '/src/includes/aside.php'?>
-        <main class="flex-1 p-3">
-           <h2 class="text-3xl font-semibold text-amber-50">Bem-vindo, <?= $adega_nome ?></h2>
+        <main class="flex-1 p-0 md:p-5">
+            <div class="flex flex-col justify-center">
+                <h2 class="block md:hidden text-center text-xl p-3 font-semibold bg-[#2b2d3e] rounded-b-3xl text-amber-50 ">Bem-vindo, <?= $adega_nome ?></h2>
+            </div>
+           <h2 class="hidden md:block text-3xl font-semibold text-amber-50">Bem-vindo, <?= $adega_nome ?></h2>
            <div class="mt-4">
-                <span class="text-2xl text-amber-50">Vendas</span>
+                <span class="ml-3 text-2xl text-amber-50 md:text-2xl text-amber-50">Vendas</span>
                 <div class="grid grid-cols-12 p-3 mt-7 gap-2.5">
                     <div class="col-span-2">
                         <label class="label" for="grid-first-name">De</label>
