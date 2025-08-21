@@ -1,4 +1,6 @@
-<div class=" p-2 md:pr-4 pb-4 pt-4">
+
+
+<div class="p-0 md:p-0 md:pr-4 md:pb-4 md:pt-4">
     <div class="hidden md:grid grid-cols-12 p-3 gap-3">
         <div class="col-span-4">
             <div class="box box1 shadow-2xl bg-[#2b2d3e]">
@@ -47,10 +49,12 @@
         </div>
     </div>
 
-
-    <div class="p-3 mt-3">
-        <div class="box box3 shadow-2xl bg-[#2b2d3e]">
-            <div id="chart"></div>
+    <div class="hidden md:block">
+        <div class="p-3 mt-6">
+            <div class="box box3 shadow-2xl bg-[#2b2d3e]">
+                <div id="chart"></div>
+            </div>
         </div>
     </div>
+   
 </div>

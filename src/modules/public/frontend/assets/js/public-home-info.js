@@ -8,6 +8,7 @@ $(() => {
   getReceitaCustoMobile()
   getReceitaCustoMes()
   getKpi()
+  getSalesToday()
 });
 
 async function getReceitaCusto() {
@@ -110,7 +111,6 @@ async function getReceitaCustoMobile() {
   renderMobileChart('custo');
 }
 
-// Cria opções do chart
 function buildMobileOpts(title, total, color, dataArr, labels, globalMin, globalMax) {
   const fmtBRL = v => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(v);
   return {
@@ -296,6 +296,24 @@ const renderKpi = (response) => {
   })
 }
 
+const getSalesToday = async () => {
+
+    const url = 'sales-today'
+
+    const response = await $.ajax(url)
+
+    renderSalesToday(response)
+    
+}
+
+const renderSalesToday = (response) => {
+    animateCount('.vendasHoje', 0, parseCurrency(response.data), 1000, {
+    decimals: 2,
+    prefix: 'R$ ',
+    suffix: ''
+  })
+}
+
 function month() {
   const hoje = new Date()
   const ano = hoje.getFullYear()
@@ -322,6 +340,8 @@ const setKpiDateInputs = () => {
   $('#kpi_de').val(primeiroDia)
   $('#kpi_ate').val(ultimoDia)
 }
+
+
 
 
 const animateCount = (selector, start, end, duration, options = {}) => {
@@ -358,6 +378,33 @@ const parseCurrency = (value) => {
   return 0
 }
 
+const showFiltro = () => {
+  const show = $('#showFiltro')
+  const hidden = $('#hiddenFiltro')
+  const filtro = $('.filtros')
+
+  show.addClass('hidden')
+  hidden.removeClass('hidden')
+
+  filtro.removeClass('hidden')
+
+
+}
+
+const hiddenFiltro = () => {
+  const show = $('#showFiltro')
+  const hidden = $('#hiddenFiltro')
+  const filtro = $('.filtros')
+
+  show.removeClass('hidden')
+  hidden.addClass('hidden')
+  filtro.addClass('hidden')
+
+
+}
+
+$(document).on('click', '#showFiltro', showFiltro)
+$(document).on('click', '#hiddenFiltro', hiddenFiltro)
 $(document).on('change', '#kpi_de, #kpi_ate', getKpi)
 
 
