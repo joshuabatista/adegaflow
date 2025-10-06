@@ -1,4 +1,5 @@
-<div class="bg-[#2b2d3e] p-4 rounded shadow-2xl flex flex-col h-[575px] mt-3">
+<div class="bg-[#2b2d3e] p-4 rounded shadow-2xl flex flex-col h-[575px] mt-3
+">
     <div class="grid grid-cols-3 gap-2 mt-2">
         <div class="col-span-2">
             <span class="text-2xl font-semibold text-amber-50">Nova venda</span>

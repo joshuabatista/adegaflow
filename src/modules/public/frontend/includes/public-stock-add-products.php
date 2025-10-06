@@ -1,4 +1,4 @@
-<div class="bg-[#2b2d3e] p-4 rounded shadow-2xl max-h-[505px]">
+<div class="bg-[#2b2d3e] p-4 rounded shadow-2xl max-h-[505px] mt-4 md:mt-0">
     <div class="flex justify-center">
         <span class="text-2xl text-amber-50 font-semibold text-center">Novo Produto</span>
     </div>
@@ -42,5 +42,8 @@
             </button>
         </div>
     </div>
+               <div class="flex md:hidden mt-24">
+                    <h1>.</h1>
+                </div>
 </div>
 

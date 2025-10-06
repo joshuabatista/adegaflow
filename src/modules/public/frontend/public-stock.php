@@ -6,7 +6,7 @@
 <html>
     <body class="flex bg-[#343e59]">
         <?php require_once dirname(__DIR__, 4) . '/src/includes/aside.php'?>
-        <main class="p-0 sm:p-3 flex-1">
+        <main class="flex-1 p-0 md:p-5">
             <div class="flex flex-col justify-center">
                 <h2 class="block md:hidden text-center text-xl p-3 font-semibold bg-[#2b2d3e] rounded-b-3xl text-amber-50 ">Bem-vindo, <?= $adega_nome ?></h2>
             </div>

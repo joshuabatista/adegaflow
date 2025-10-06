@@ -1,5 +1,5 @@
-<div class=" pr-4">
-    <div class="grid grid-cols-6 p-3 mt-2 gap-2.5">
+<div class="pr-0 sm:pr-4">
+    <div class="hidden md:grid grid-cols-6 p-3 mt-2 gap-2.5">
         <div class="col-span-2">
             <label class="label" for="grid-first-name">Produto</label>
             <input class="form-input" id="produto_filtro" type="text" placeholder="Caixa de cerveja">
@@ -33,14 +33,21 @@
         </button>
     </div>
     <div class="grid grid-cols-12 gap-2 border-b p-3 mt-4 bg-[#2b2d3e] rounded-t text-sm font-semibold text-white shadow-2xl">
-        <div class="col-span-1">Entrada</div>
-        <div class="col-span-3">Produto</div>
-        <div class="col-span-3">Plano de Contas</div>
+        <div class="col-span-3">Entrada</div>
+        <div class="col-span-4">Produto</div>
+        <div class="col-span-2">Plan. Contas</div>
         <div class="col-span-1">Qtd</div>
-        <div class="col-span-1">Compra</div>
-        <div class="col-span-1">Venda</div>
-        <div class="col-span-1 text-center">Excluir</div>
-        <div class="col-span-1 text-center">Editar</div>
+        <div class="col-span-1">
+            <span class="block sm:hidden">C</span>
+            <span class="hidden sm:block">Compra</span>
+        </div>
+        <div class="col-span-1">
+            <span class="block sm:hidden">V</span>
+            <span class="hidden sm:block">Venda</span>
+        </div>
+
+        <!-- <div class="col-span-1 text-center">Excluir</div>
+        <div class="col-span-1 text-center">Editar</div> -->
     </div>
     <div class="container-products shadow-2xl">
        
@@ -56,7 +63,7 @@
         </div>
     </div>
 
-    <div class="flex flex-row justify-between">
+    <div class="flex flex-row justify-center md:justify-between">
         <div class="hidden mt-4 sm:flex">
             <span class="font-medium text-base text-amber-50 pagination-info-card"></span>
         </div>
@@ -83,6 +90,12 @@
             </button>
         </div>
     </div>
+    <div class="flex mt-4 sm:hidden justify-center">
+        <span class="font-medium text-base text-amber-50 pagination-info-card"></span>
+    </div>
+    
+
+
 
     
     

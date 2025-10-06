@@ -170,22 +170,13 @@ const renderProdutos = (response) => {
 
         container.append(`
                 <div class="grid grid-cols-12 gap-2 p-3 bg-[#2b2d3e] text-white text-sm items-center hover:bg-[#3b3d4e] transition">
-                    <div class="col-span-1">${elm.data_entrada}</div>
-                    <div class="col-span-3 truncate">${elm.produto}</div>
-                    <div class="col-span-3 truncate">${elm.plano_contas}</div>
-                    <div class="col-span-1 text-start">${elm.quantidade}</div>
-                    <div class="col-span-1 text-start">R$ ${parseFloat(elm.valor_compra).toFixed(2)}</div>
-                    <div class="col-span-1 text-start">R$ ${parseFloat(elm.valor_venda).toFixed(2)}</div>
-                    <div class="col-span-1 text-center">
-                        <button class="text-red-500 hover:text-red-400">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </div>
-                    <div class="col-span-1 text-center">
-                        <button class="text-blue-400 hover:text-blue-300">
-                            <i class="fa-solid fa-pen"></i>
-                        </button>
-                    </div>
+                    <div class="col-span-3 text-xs md:text-sm">${elm.data_entrada}</div>
+                    <div class="col-span-4 truncate text-xs md:text-sm">${elm.produto}</div>
+                    <div class="col-span-2 truncate text-xs md:text-sm">${elm.plano_contas}</div>
+                    <div class="col-span-1 text-start text-xs md:text-sm">${elm.quantidade}</div>
+                    <div class="col-span-1 text-start text-xs md:text-sm">R$ ${parseFloat(elm.valor_compra).toFixed(2)}</div>
+                    <div class="col-span-1 text-start text-xs md:text-sm">R$ ${parseFloat(elm.valor_venda).toFixed(2)}</div>
+                    
                 </div>
             `)
     })

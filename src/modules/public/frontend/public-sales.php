@@ -10,29 +10,26 @@
             <div class="flex flex-col justify-center">
                 <h2 class="block md:hidden text-center text-xl p-3 font-semibold bg-[#2b2d3e] rounded-b-3xl text-amber-50 ">Bem-vindo, <?= $adega_nome ?></h2>
             </div>
-           <h2 class="hidden md:block text-3xl font-semibold text-amber-50">Bem-vindo, <?= $adega_nome ?></h2>
-           <div class="mt-4">
+            <h2 class="hidden md:block text-3xl font-semibold text-amber-50">Bem-vindo, <?= $adega_nome ?></h2>
+            <div class="mt-4">
                 <span class="ml-3 text-2xl text-amber-50 md:text-2xl text-amber-50">Vendas</span>
-                <div class="grid grid-cols-12 p-3 mt-7 gap-2.5">
+                <div class="hidden md:grid grid-cols-12 p-3 mt-7 gap-2.5">
                     <div class="col-span-2">
                         <label class="label" for="grid-first-name">De</label>
                         <input class="form-input" id="de" type="date" placeholder="01/01/2025">
                     </div>
-
                     <div class="col-span-2">
                         <label class="label" for="grid-first-name">
                             Até
                         </label>
                         <input class="form-input" id="ate" type="date" placeholder="31/01/2025">
                     </div>
-
                     <div class="col-span-3">
                         <label class="label" for="grid-first-name">
                             Produto
                         </label>
                         <input type="text" name="produto" id="produto" class="form-input" placeholder="Cerveja">
                     </div>
-
                     <div class="col-span-3">
                         <label class="label" for="grid-first-name">
                             Plano de Contas
@@ -41,8 +38,6 @@
                             <option value="">Selecione</option>
                         </select>
                     </div>
-
-                    
                     <div class="col-span-2">
                         <label class="label" for="grid-first-name">
                             Venda ID
@@ -55,19 +50,19 @@
                         <i class="fa-regular fa-file-excel fa-2x"></i>
                     </button>
                 </div>
-                <div class="grid grid-cols-12 gap-2 border-b p-3 mt-4 bg-[#2b2d3e] rounded text-sm font-semibold text-white shadow-2xl">
-                    <div class="col-span-2">Venda ID</div>
-                    <div class="col-span-1">Data</div>
-                    <div class="col-span-4">Produto</div>
-                    <div class="col-span-1">Qtd</div>
-                    <div class="col-span-2">Valor</div>
-                    <div class="col-span-1 text-center">Excluir</div>
-                    <div class="col-span-1 text-center">Editar</div>
+                <div class="p-2 md:p-0">
+                    <div class="grid grid-cols-12 gap-2 border-b p-3 mt-4 bg-[#2b2d3e] rounded text-sm font-semibold text-white shadow-2xl">
+                        <div class="col-span-3 text-xs md:text-sm">Venda ID</div>
+                        <div class="col-span-2 text-xs md:text-sm">Data</div>
+                        <div class="col-span-4 text-xs md:text-sm">Produto</div>
+                        <div class="col-span-1 text-xs md:text-sm text-start">Qtd</div>
+                        <div class="col-span-2 text-xs md:text-sm">Valor</div>
+                    </div>
+                    <div class="container-sales shadow-2xl">
+                    
+                    </div>
                 </div>
-                <div class="container-sales shadow-2xl">
                 
-                </div>
-
                 
                 <div class="flex justify-center mt-4 loading">
                     <div role="status">
@@ -79,7 +74,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-row justify-between">
+                <div class="flex flex-row justify-center md:justify-between">
                     <div class="hidden mt-4 sm:flex">
                         <span class="font-medium text-base text-amber-50 pagination-info-card"></span>
                     </div>
@@ -103,6 +98,13 @@
                             </svg>
                         </button>
                     </div>
+                </div>
+                <div class="flex mt-4 sm:hidden justify-center">
+                    <span class="font-medium text-base text-amber-50 pagination-info-card"></span>
+                </div>
+
+                <div class="flex md:hidden mt-12">
+                    <h1>.</h1>
                 </div>
 
            </div>

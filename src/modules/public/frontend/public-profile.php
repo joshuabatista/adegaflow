@@ -6,14 +6,14 @@
 <html>
     <body class="flex bg-[#343e59]">
         <?php require_once dirname(__DIR__, 4) . '/src/includes/aside.php'?>
-        <main class="p-0 sm:p-3 flex-1">
+        <main class="flex-1 p-0 md:p-5">
             <div class="flex flex-col justify-center">
                 <h2 class="block md:hidden text-center text-xl p-3 font-semibold bg-[#2b2d3e] rounded-b-3xl text-amber-50 ">Bem-vindo, <?= $adega_nome ?></h2>
             </div>
            <h2 class="hidden md:block text-3xl font-semibold text-amber-50">Bem-vindo, <?= $adega_nome ?></h2>
            <div class="mt-4">
                 <span class="ml-3 text-2xl text-amber-50 md:text-2xl text-amber-50">Perfil</span>
-                <div class="row">
+                <div class="row p-2">
                     <form id="form-perfil">
                         <div class="flex justify-center">
                             <div class="bg-[#2b2d3e] pl-8 pr-8 pt-8 pb-4 rounded-2xl shadow-2xl">
@@ -25,7 +25,7 @@
                                     <div class="flex flex-col">
                                         <label class="label">Nome</label>
                                         <input type="text" class="form-input" name="nome" id="nome" placeholder="Nome adega">
-                                    </div>
+                                    </div> 
                                 </div>
                                 <div class="grid grid-cols-3 mt-4 gap-2">
                                     <div class="flex flex-col col-span-1">

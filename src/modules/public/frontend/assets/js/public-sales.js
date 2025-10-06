@@ -55,21 +55,11 @@ const renderSales = (response) => {
 
         container.append(`
                 <div class="grid grid-cols-12 gap-2 p-3 bg-[#2b2d3e] text-white text-sm items-center hover:bg-[#3b3d4e] transition">
-                    <div class="col-span-2">${elm.venda_id}</div>
-                    <div class="col-span-1 truncate">${elm.data_venda_formatada}</div>
-                    <div class="col-span-4 truncate">${elm.produto}</div>
-                    <div class="col-span-1 text-start">${elm.qtd_venda}</div>
-                    <div class="col-span-2 text-start">R$ ${parseFloat(elm.valor_total).toFixed(2)}</div>
-                    <div class="col-span-1 text-center">
-                        <button class="text-red-500 hover:text-red-400">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </div>
-                    <div class="col-span-1 text-center">
-                        <button class="text-blue-400 hover:text-blue-300">
-                            <i class="fa-solid fa-pen"></i>
-                        </button>
-                    </div>
+                    <div class="col-span-3  text-xs md:text-sm">${elm.venda_id}</div>
+                    <div class="col-span-2 truncate  text-xs md:text-sm">${elm.data_venda_formatada}</div>
+                    <div class="col-span-4 truncate  text-xs md:text-sm">${elm.produto}</div>
+                    <div class="col-span-1 text-start  text-xs md:text-sm">${elm.qtd_venda}</div>
+                    <div class="col-span-2 text-start  text-xs md:text-sm">R$ ${parseFloat(elm.valor_total).toFixed(2)}</div>
                 </div>
             `)
     })

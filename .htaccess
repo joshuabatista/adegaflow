@@ -8,6 +8,7 @@ RewriteRule ^stock$ /src/modules/public/frontend/public-stock.php [L]
 RewriteRule ^profile$ /src/modules/public/frontend/public-profile.php [L]
 RewriteRule ^login$ /src/modules/public/frontend/public-login.php [L]
 RewriteRule ^new-password$ /src/modules/public/frontend/public-new-password.php [L]
+RewriteRule ^$ /src/modules/public/frontend/public-landing-page.php [L]
 
 
 
