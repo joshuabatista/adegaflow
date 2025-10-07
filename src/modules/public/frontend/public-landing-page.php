@@ -1,5 +1,5 @@
 <?php
-    $title = "AdegaFlow - Sistema Profissional de Gestão";
+    $title = "AdegaFlow - Sistema Profissional de Gestão de Adegas";
     require_once dirname(__DIR__, 4) . '/public_html/config/conection.php';
     require_once dirname(__DIR__, 4) . '/app/functions.php';
 ?>
@@ -17,7 +17,7 @@
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="AdegaFlow - Sistema Profissional de Gestão">
+    <meta property="og:title" content="AdegaFlow - Sistema Profissional de Gestão de Adegas">
     <meta property="og:description" content="Revolucione sua adega com nossa solução completa de gestão">
     <meta property="og:type" content="website">
     
