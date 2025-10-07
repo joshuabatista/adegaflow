@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Ativar RewriteEngine
 RewriteEngine On
 
@@ -37,43 +37,3 @@ RewriteRule ^forget-password$ /src/modules/public/backend/public-forget-password
 RewriteRule ^validation-code$ /src/modules/public/backend/public-validation-code.php [L]
 RewriteRule ^set-new-password$ /src/modules/public/backend/public-set-new-password.php [L]
 RewriteRule ^sales-today$ /src/modules/public/backend/public-get-sales-today.php [L]
-=======
-# Ativar RewriteEngine
-RewriteEngine On
-
-# Frontend
-RewriteRule ^home$ /src/modules/public/frontend/public-home-page.php [L]
-RewriteRule ^sales$ /src/modules/public/frontend/public-sales.php [L]
-RewriteRule ^stock$ /src/modules/public/frontend/public-stock.php [L]
-RewriteRule ^profile$ /src/modules/public/frontend/public-profile.php [L]
-RewriteRule ^login$ /src/modules/public/frontend/public-login.php [L]
-RewriteRule ^new-password$ /src/modules/public/frontend/public-new-password.php [L]
-
-# Página inicial = home
-RewriteRule ^$ /src/modules/public/frontend/public-home-page.php [L]
-
-# Backend
-RewriteRule ^login-adega$ /src/modules/public/backend/public-login.php [L]
-RewriteRule ^logout$ /src/modules/public/backend/public-logout.php [L]
-RewriteRule ^get-adega$ /src/modules/public/backend/public-get-adega.php [L]
-RewriteRule ^profile-edit$ /src/modules/public/backend/public-profile-edit.php [L]
-RewriteRule ^get-plano$ /src/modules/public/backend/public-get-plano-contas.php [L]
-RewriteRule ^add-product$ /src/modules/public/backend/public-add-product.php [L]
-RewriteRule ^get-products$ /src/modules/public/backend/public-get-products.php [L]
-RewriteRule ^get-products-sale$ /src/modules/public/backend/public-get-products-sale.php [L]
-RewriteRule ^get-plano-sale$ /src/modules/public/backend/public-get-plano-contas-sale.php [L]
-RewriteRule ^new-sale$ /src/modules/public/backend/public-new-sale.php [L]
-RewriteRule ^validate-product$ /src/modules/public/backend/public-validate-product.php [L]
-RewriteRule ^add-qtd-sale$ /src/modules/public/backend/public-add-qtd-sale.php [L]
-RewriteRule ^get-sales$ /src/modules/public/backend/public-get-sales.php [L]
-RewriteRule ^revenue-cost$ /src/modules/public/backend/public-home-revenue-cost.php [L]
-RewriteRule ^revenue-cost-year$ /src/modules/public/backend/public-home-revenue-cost-year.php [L]
-RewriteRule ^get-products-excel$ /src/modules/public/backend/public-get-products-excel.php [L]
-RewriteRule ^get-sales-excel$ /src/modules/public/backend/public-get-sales-excel.php [L]
-RewriteRule ^get-kpi$ /src/modules/public/backend/public-get-kpi.php [L]
-RewriteRule ^send-email$ /src/modules/public/backend/public-send-email.php [L]
-RewriteRule ^forget-password$ /src/modules/public/backend/public-forget-password.php [L]
-RewriteRule ^validation-code$ /src/modules/public/backend/public-validation-code.php [L]
-RewriteRule ^set-new-password$ /src/modules/public/backend/public-set-new-password.php [L]
-RewriteRule ^sales-today$ /src/modules/public/backend/public-get-sales-today.php [L]
->>>>>>> f3372cd04d3bb68ac694b3e570bca425d1c4a816
