@@ -1,17 +1,18 @@
+# Ativar RewriteEngine
 RewriteEngine On
 
-
-
+# Frontend
 RewriteRule ^home$ /src/modules/public/frontend/public-home-page.php [L]
 RewriteRule ^sales$ /src/modules/public/frontend/public-sales.php [L]
 RewriteRule ^stock$ /src/modules/public/frontend/public-stock.php [L]
 RewriteRule ^profile$ /src/modules/public/frontend/public-profile.php [L]
 RewriteRule ^login$ /src/modules/public/frontend/public-login.php [L]
 RewriteRule ^new-password$ /src/modules/public/frontend/public-new-password.php [L]
-RewriteRule ^$ /src/modules/public/frontend/public-landing-page.php [L]
 
+# Página inicial = home
+RewriteRule ^$ /src/modules/public/frontend/public-home-page.php [L]
 
-
+# Backend
 RewriteRule ^login-adega$ /src/modules/public/backend/public-login.php [L]
 RewriteRule ^logout$ /src/modules/public/backend/public-logout.php [L]
 RewriteRule ^get-adega$ /src/modules/public/backend/public-get-adega.php [L]
