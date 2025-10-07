@@ -4,9 +4,6 @@ $db = 'atenas65_adegaflow';
 $username = 'atenas65';
 $password = 'rootAdmin@@2024';
 
-// $db = 'adegaflow';
-// $username = 'root';
-// $password = '';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $username, $password);
