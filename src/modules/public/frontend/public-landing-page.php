@@ -179,10 +179,10 @@
 
                 <!-- Botões de ação -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in">
-                    <button class="btn-primary px-8 py-4 rounded-lg text-white font-semibold text-lg shadow-lg">
+                    <a href="login" class="btn-primary px-8 py-4 rounded-lg text-white font-semibold text-lg shadow-lg">
                         <i class="fas fa-rocket mr-2"></i>
                         Começar Agora
-                    </button>
+                    </a>
                     <!-- <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-all">
                         <i class="fas fa-play mr-2"></i>
                         Ver Demo
