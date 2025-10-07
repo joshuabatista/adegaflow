@@ -840,9 +840,9 @@
                     </div>
                 </div>
 
-                <div class="order-1 lg:order-2" data-aos="fade-left">
-                    <div class="parallax-container">
-                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-3xl shadow-2xl parallax-image">
+                <div class="order-1 lg:order-2">
+                    <div class="">
+                        <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-3xl shadow-2xl">
                             <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
                                 <img 
                                     src="../public_html/assets/images/AF_HP.png"
