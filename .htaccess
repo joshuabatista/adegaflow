@@ -11,7 +11,7 @@ RewriteRule ^login$ /src/modules/public/frontend/public-login.php [L]
 RewriteRule ^new-password$ /src/modules/public/frontend/public-new-password.php [L]
 
 # Página inicial = home
-RewriteRule ^inicio /src/modules/public/frontend/public-landing-page.php [L]
+RewriteRule ^ /src/modules/public/frontend/public-landing-page.php [L]
 
 # Backend
 RewriteRule ^login-adega$ /src/modules/public/backend/public-login.php [L]
