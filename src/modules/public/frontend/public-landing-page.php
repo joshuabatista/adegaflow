@@ -329,8 +329,9 @@
                 <!-- Logo Premium -->
                 <div class="flex items-center">
                     <div class="flex items-center space-x-3">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shadow-lg">
-                            <i class="fas fa-wine-bottle text-white text-xl"></i>
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-50 to-amber-50 flex items-center justify-center shadow-lg">
+                            <img src="../public_html/assets/images/AF_Just_Logo.svg" class=" w-10 h-10 mx-auto" alt="AdegaFlow Logo Profissional">
+
                         </div>
                         <div>
                             <h1 class="text-2xl font-bold text-white">Adega<span class="text-red-400">Flow</span></h1>
@@ -367,7 +368,7 @@
                 <div class="hidden lg:block">
                     <a href="login" class="btn-premium px-6 py-3 rounded-xl text-white font-semibold text-sm inline-flex items-center space-x-2">
                         <i class="fas fa-rocket"></i>
-                        <span>Acessar Sistema</span>
+                        <span>Acessar Painel</span>
                     </a>
                 </div>
 
@@ -411,17 +412,17 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center">
                 <!-- Logo Hero -->
-                <div class="mb-8" data-aos="fade-up" data-aos-duration="1000">
+                <!-- <div class="mb-8" data-aos="fade-up" data-aos-duration="1000">
                     <div class="inline-block">
                         <img src="../public_html/assets/images/AF_Just_Logo.svg" class="w-32 h-32 mx-auto" alt="AdegaFlow Logo Profissional">
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Main Title -->
                 <div class="mb-8" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6">
-                        <span class=" text-amber-50">Adega</span>
-                        <span class="text-amber-50">Flow</span>
+                        <span class=" text-gray-200">Adega</span>
+                        <span class="text-gray-200">Flow</span>
                     </h1>
                     <div class="w-32 h-1 bg-gradient-to-r from-red-400 to-red-600 mx-auto rounded-full"></div>
                 </div>
@@ -444,7 +445,7 @@
                     <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
                         <a href="login" class="btn-premium px-10 py-5 rounded-2xl text-white font-bold text-lg inline-flex items-center space-x-3 group">
                             <i class="fas fa-rocket group-hover:rotate-12 transition-transform"></i>
-                            <span>Iniciar Agora</span>
+                            <span>Solicitar periodo experimental</span>
                             <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                         </a>
                         <!-- <button class="btn-outline px-10 py-5 rounded-2xl text-white font-bold text-lg inline-flex items-center space-x-3 group">
@@ -474,11 +475,11 @@
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <div class="w-8 h-12 border-2 border-white/30 rounded-full flex justify-center">
                 <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <!-- About Section Premium -->
@@ -827,7 +828,7 @@
                             </div>
                         </div>
                         
-                        <div class="grid grid-cols-2 gap-4">
+                        <!-- <div class="grid grid-cols-2 gap-4">
                             <div class="glass-card rounded-xl p-4 text-center">
                                 <div class="text-2xl font-bold text-blue-400 mb-1">4K</div>
                                 <div class="text-xs text-gray-400">Ultra HD Ready</div>
@@ -836,7 +837,7 @@
                                 <div class="text-2xl font-bold text-green-400 mb-1">60fps</div>
                                 <div class="text-xs text-gray-400">Smooth Animations</div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -960,7 +961,7 @@
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
                     <a href="login" class="btn-premium px-12 py-6 rounded-2xl text-white font-bold text-xl inline-flex items-center space-x-3 group">
                         <i class="fas fa-rocket group-hover:rotate-12 transition-transform"></i>
-                        <span>Iniciar Jornada</span>
+                        <span>Solicitar periodo experimental</span>
                         <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </a>
                     <!-- <button class="btn-outline px-12 py-6 rounded-2xl text-white font-bold text-xl inline-flex items-center space-x-3 group">
@@ -1027,7 +1028,7 @@
 
                 <!-- Contact -->
                 <div data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="text-xl font-bold text-white mb-6">Contato Premium</h4>
+                    <h4 class="text-xl font-bold text-white mb-6">Contato</h4>
                     <div class="space-y-4">
                         <div class="flex items-center space-x-3">
                             <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
@@ -1230,7 +1231,7 @@
     </script>
 
     <!-- Custom Cursor Styles -->
-    <style>
+    <!-- <style>
         .custom-cursor {
             width: 20px;
             height: 20px;
@@ -1258,6 +1259,6 @@
         img.loaded {
             opacity: 1;
         }
-    </style>
+    </style> -->
 </body>
 </html>
