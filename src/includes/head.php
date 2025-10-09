@@ -23,6 +23,14 @@ if (!isset($_SESSION['adega_id']) && $_SERVER['REQUEST_URI'] !== '/login') {
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
      
 </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J5B92NJ3MQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J5B92NJ3MQ');
+</script>
 
 <style>
     body {

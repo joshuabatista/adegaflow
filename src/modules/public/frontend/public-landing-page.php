@@ -312,6 +312,14 @@
         }
     </style>
 </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J5B92NJ3MQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J5B92NJ3MQ');
+</script>
 
 <body class="bg-gray-900 text-white">
     <!-- Loading Screen -->
