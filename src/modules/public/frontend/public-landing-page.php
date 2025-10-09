@@ -1,5 +1,5 @@
 <?php
-    $title = "AdegaFlow - Sistema Profissional de Gestão de Adegas";
+    $title = "AdegaFlow - Sistema de Gestão de Adegas";
     require_once dirname(__DIR__, 4) . '/public_html/config/conection.php';
     require_once dirname(__DIR__, 4) . '/app/functions.php';
 ?>
@@ -17,7 +17,7 @@
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="AdegaFlow - Sistema Profissional de Gestão de Adegas">
+    <meta property="og:title" content="AdegaFlow - Sistema de Gestão de Adegas">
     <meta property="og:description" content="Revolucione sua adega com nossa solução completa de gestão">
     <meta property="og:type" content="website">
     
@@ -335,7 +335,7 @@
                         </div>
                         <div>
                             <h1 class="text-2xl font-bold text-white">Adega<span class="text-red-400">Flow</span></h1>
-                            <p class="text-xs text-gray-400">Sistema Profissional</p>
+                            <p class="text-xs text-gray-400">Sistema de Gestão de Adegas</p>
                         </div>
                     </div>
                 </div>
@@ -412,14 +412,14 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center">
                 <!-- Logo Hero -->
-                <!-- <div class="mb-8" data-aos="fade-up" data-aos-duration="1000">
+                <!-- <div class="mb-8 mt-8" data-aos="fade-up" data-aos-duration="1000">
                     <div class="inline-block">
                         <img src="../public_html/assets/images/AF_Just_Logo.svg" class="w-32 h-32 mx-auto" alt="AdegaFlow Logo Profissional">
                     </div>
                 </div> -->
 
                 <!-- Main Title -->
-                <div class="mb-8" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="mb-8 mt-24 md:mt-0 lg:mt-0 mx-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6">
                         <span class=" text-gray-200">Adega</span>
                         <span class="text-gray-200">Flow</span>
@@ -432,20 +432,20 @@
                     <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
                         <span class="text-gray-200">Sistema de Gestão</span>
                         <br>
-                        <span class="text-gray-200">de Adegas</span>
+                        <span class="text-gray-200">de Adegas com IA</span>
                     </h2>
                     <p class="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                         Transforme sua adega com nossa solução completa de gestão empresarial. 
-                        Tecnologia de ponta, design premium e performance incomparável para levar seu negócio ao próximo nível.
+                        Tecnologia de ponta, analises e insigts de IA com performance incomparável para levar seu negócio ao próximo nível.
                     </p>
                 </div>
 
                 <!-- Action Buttons -->
                 <div class="mb-16" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                     <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                        <a href="login" class="btn-premium px-10 py-5 rounded-2xl text-white font-bold text-lg inline-flex items-center space-x-3 group">
+                        <a target="_blank" href="https://w.app/adegaflow" class="btn-premium px-10 py-5 rounded-2xl text-white font-bold text-lg inline-flex items-center space-x-3 group">
                             <i class="fas fa-rocket group-hover:rotate-12 transition-transform"></i>
-                            <span>Solicitar periodo experimental</span>
+                            <span>Solicitar acesso</span>
                             <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                         </a>
                         <!-- <button class="btn-outline px-10 py-5 rounded-2xl text-white font-bold text-lg inline-flex items-center space-x-3 group">
@@ -727,6 +727,32 @@
                 <!-- Feature 4 -->
                 <div class="glass-card rounded-3xl p-8 text-center group" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-robot text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-white mb-4">Inteligência Artificial</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Análises por IA com base em suas vendas e estoque, levando seu negócio a outro patamar.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2 text-sm text-gray-300">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Insigts</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-sm text-gray-300">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Idéias reais e aplicaveis</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-sm text-gray-300">
+                            <i class="fas fa-check text-green-400"></i>
+                            <span>Baseado em suas movimentações</span>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 text-center group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
                         <i class="fas fa-chart-bar text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Analytics & BI</h3>
@@ -747,6 +773,8 @@
                             <span>Insights acionáveis</span>
                         </div>
                     </div>
+
+                    
                 </div>
             </div>
 
@@ -959,9 +987,9 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-                    <a href="login" class="btn-premium px-12 py-6 rounded-2xl text-white font-bold text-xl inline-flex items-center space-x-3 group">
+                    <a target="_blank" href="https://w.app/adegaflow" class="btn-premium px-12 py-6 rounded-2xl text-white font-bold text-xl inline-flex items-center space-x-3 group">
                         <i class="fas fa-rocket group-hover:rotate-12 transition-transform"></i>
-                        <span>Solicitar periodo experimental</span>
+                        <span>Solicitar acesso</span>
                         <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </a>
                     <!-- <button class="btn-outline px-12 py-6 rounded-2xl text-white font-bold text-xl inline-flex items-center space-x-3 group">
@@ -1230,35 +1258,6 @@
         };
     </script>
 
-    <!-- Custom Cursor Styles -->
-    <!-- <style>
-        .custom-cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #e94560;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.1s ease;
-            transform: translate(-50%, -50%);
-        }
-        
-        .cursor-hover {
-            width: 40px;
-            height: 40px;
-            background: rgba(233, 69, 96, 0.1);
-            border-color: #e94560;
-        }
-        
-        img {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        img.loaded {
-            opacity: 1;
-        }
-    </style> -->
+   
 </body>
 </html>
