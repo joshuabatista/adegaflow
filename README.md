@@ -2,6 +2,8 @@ Sistema web completo para **gerenciamento de adegas**, focado em **frente de cai
 
 O Adega Flow foi desenvolvido para otimizar a rotina de pequenas e médias adegas, trazendo organização, agilidade no atendimento e visão clara dos resultados financeiros.
 
+www.adegaflow.com.br
+
 ## 🚀 Funcionalidades
 
 - 🧾 **Frente de Caixa (PDV)**
